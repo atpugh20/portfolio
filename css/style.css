@@ -1,0 +1,49 @@
+html{
+    background: black
+}
+
+.text, .header{
+    color: white;
+    font-weight: lighter;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#title{
+    font-family: "triforcetriforce";
+    font-size: 3rem;
+    text-align: center;
+}
+
+a:link{
+    color: aqua;
+}
+a:active{
+    color: purple;
+}
+
+ul ul{
+    font-size: 0.75em;
+}
+
+.header{
+    text-decoration: underline;
+}   
+
+@font-face {
+    font-family: 'triforcetriforce';
+    src: url('zelda.woff2') format('woff2'),
+         url('zelda.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.project-image{
+    height: 150px;
+    margin-top: 25px;
+}
+
+.photo{
+    border: solid white 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
