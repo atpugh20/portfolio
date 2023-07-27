@@ -17,9 +17,6 @@ html{
 a:link{
     color: aqua;
 }
-a::selection{
-    color: purple;
-}
 
 ul ul{
     font-size: 0.75em;
