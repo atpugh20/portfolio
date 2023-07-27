@@ -17,7 +17,7 @@ html{
 a:link{
     color: aqua;
 }
-a:active{
+a::selection{
     color: purple;
 }
 
