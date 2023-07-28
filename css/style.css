@@ -16,7 +16,7 @@ html{
 }
 
 #profile-image{
-    max-width: 400px;
+    width: 400px;
     object-fit: cover;
 }
 
@@ -131,6 +131,23 @@ footer > a{
     }
     .even{
         flex-direction: column;
+    }
+    #profile-image{
+        width: 200px;
+    }
+    .project, .about, .bio{
+        font-size: 1.0rem;
+        margin: 25px;
+        gap: 25px;
+    }
+
+    .project-list .text{
+        font-size: 1rem;
+        line-height: 25px;
+    }
+
+    .resume{
+        font-size: 1rem;
     }
 }
 }
