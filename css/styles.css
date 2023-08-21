@@ -43,6 +43,10 @@ body {
     background-size: 28.5% 28.5%;
 }
 
+.hidden {
+    display: none;
+}
+
 /* Text Styling */
 
 .bold {
@@ -114,14 +118,19 @@ a:hover {
 
 .navbar {
     font-size: 1.1rem;
-    padding-top: 30px;
     justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .links {
     align-content: center;
     align-items: center;
     gap: 25px;
+}
+
+.nav-header {
+    padding-top: 10px;
 }
 
 .nav-header > a {
@@ -132,6 +141,11 @@ a:hover {
 
 .nav-logo {
     height: 25px;
+}
+
+footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 footer h3 {
@@ -150,6 +164,51 @@ footer .links {
     flex-direction: column;
     padding-right: 50px;
     border-right: forestgreen solid 10px;
+}
+
+/* Dropdown Toolbar */
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar li a {
+    color: white;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.navbar ul ul {
+    position: absolute;
+    top: 100%;
+    display: none;
+}
+
+.navbar ul ul li {
+    display: block;
+    text-align: right;
+}
+
+.navbar li:hover ul {
+    display: block;
+}
+
+.navbar ul li ul a:hover {
+    color: forestgreen;
+    text-decoration: none;
+}
+
+.navbar ul li ul{
+    top: 45px;
+    right: 0px
 }
 
 /* Cards */
@@ -288,3 +347,59 @@ p.card-text {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+/* Device Adjustments */
+
+@media (max-width: 992px){
+    .home{
+        gap: 200px;
+    }
+
+    .links > .sub-font {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: space-between;
+        padding-right: 0;
+    }
+
+    .navbar ul {
+        display: block;
+    }
+ 
+    .summary .flexbox {
+        flex-direction: column-reverse;
+        gap: 100px;
+        align-content: center;
+    }
+
+    .summary h2 {
+        text-align: center;    
+    }
+
+    .summary h4 {
+        max-width: 400px;
+        font-size: 20px;
+    }
+
+    .about-item {
+        gap: 100px;
+    }
+
+    .optic .flexbox {
+        flex-direction: column-reverse;
+    }
+
+    .alt-background > .about-item > h3{
+        text-align: left;
+        border-left: solid forestgreen 10px;
+        padding-left: 50px;
+        border-right: none;
+    }
+
+
+
+}
+
