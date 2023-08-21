@@ -166,6 +166,11 @@ footer .links {
     border-right: forestgreen solid 10px;
 }
 
+footer .nav-header, .links {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
 /* Dropdown Toolbar */
 
 .navbar ul {
@@ -275,6 +280,7 @@ p.card-text {
 
 .skills-img {
     height: 100px;
+    margin: 50px;
 }
 
 .summary h4 {
