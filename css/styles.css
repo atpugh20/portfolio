@@ -352,8 +352,18 @@ p.card-text {
 /* Device Adjustments */
 
 @media (max-width: 992px){
+    
+    .main{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
     .home{
         gap: 200px;
+    }
+
+    .home-img {
+        height: ;
     }
 
     .links > .sub-font {
@@ -399,7 +409,4 @@ p.card-text {
         border-right: none;
     }
 
-
-
 }
-
