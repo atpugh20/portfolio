@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=JetBrains+Mono&family=Maven+Pro&family=Vidaloka&display=swap" rel="stylesheet">    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <title>Alex Pugh</title>
+</head>
+<body>
+ 
+    <div class="main">
+
+        <div>
+
+            <nav class="navbar container flexbox">  
+                <h4 class="nav-header"><a href="../../index.html">ATP</a></h3>
+                <div class="links flexbox">
+                    <a href="../../index.html" class="sub-font bold">Home</a>
+                    <a href="../../public/about.html" class="sub-font bold">About</a>
+                    <a href="../../public/resume.html" class="sub-font bold">Resume</a>
+                    <a href="../../public/projects.html" class="sub-font bold">Projects</a>
+                    <a href="../../public/contact.html" class="sub-font bold">Contact</a>
+                    <a href="https://www.linkedin.com/in/alexandertpugh/"><img src="../../assets/linkedin.svg" class="nav-logo" alt=""></a>
+                    <a href="https://github.com/atpugh20"><img src="../../assets/github.svg" class="nav-logo" alt=""></a>
+                </div>
+            </nav>
+
+            <div class="project container">
+                <h1 class="header-text bold">"ButtercupGo!" Player Code:</h1>
+                
+                <a class="sub-font bold" id="project-github-link" href="https://github.com/atpugh20/buttercupgo-player/tree/main">Click here to see the github page</a>
+                
+                <pre>
+                    <code class="code">
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import *
+from selenium.webdriver.common.by import By
+
+service = Service("./msedgedriver.exe")
+driver = webdriver.Edge(service=service)
+driver.get("https://buttercup.rocks/")
+
+
+def get_window(even_obs):
+    top = ""
+    bottom = ""
+    path = '//*[@id="__next"]/div/div[5]/div[4]/div[3]' if even_obs else '//*[@id="__next"]/div/div[5]/div[5]/div[3]'
+    window = driver.find_element(By.XPATH, f'{path}').get_attribute('style')
+    top_finished = False
+    for letter in window:
+        if letter.isdigit():
+            if top_finished:
+                bottom += letter
+            else:
+                top += letter
+        elif letter == ";":
+            top_finished = True
+    top = int(top)
+    bottom = int(bottom)
+    return [top, bottom]
+
+def get_buttercup():
+    y_axis = ""
+    window = driver.find_element(By.XPATH, '//*[@id="__next"]/div/div[5]/div[6]').get_attribute('style')
+    x_finished = False
+    for letter in window:
+        if letter.isdigit() or letter == ".":
+            if x_finished:
+                y_axis += letter
+        elif letter == ",":
+            x_finished = True
+        elif x_finished and letter == ")":
+            break
+    return float(y_axis)
+
+def track_obstacles(even_obs):
+    x_axis = ""
+    path = '//*[@id="__next"]/div/div[5]/div[4]' if even_obs else '//*[@id="__next"]/div/div[5]/div[5]'
+    position = driver.find_element(By.XPATH, f'{path}').get_attribute('style')
+    w_finished = False
+    for letter in position:
+        if letter.isdigit() or letter == ".":
+            if w_finished:
+                x_axis += letter
+        elif letter == ";":
+            w_finished = True
+        elif w_finished and letter == "p":
+            break
+    if x_axis == "":
+        x_axis = "0"
+
+    return float(x_axis)
+
+
+while True:
+    time.sleep(2)
+    driver.find_element(By.CSS_SELECTOR, "div button").click()
+    time.sleep(2)
+    driver.find_element(By.CSS_SELECTOR, 'body').click()
+    on_even_obstacle = False
+
+    while driver.find_element(By.CSS_SELECTOR, ".styles_deadMessage__kW9am").get_attribute("style") == "display: none;":
+        current_obstacle = track_obstacles(on_even_obstacle)
+        print(current_obstacle)
+        if current_obstacle > 600:
+            on_even_obstacle = not on_even_obstacle
+            current_obstacle = track_obstacles(on_even_obstacle)
+        obstacle_height = get_window(on_even_obstacle)
+        buttercup_y = get_buttercup()
+        if obstacle_height[1] + 200 + 90.25 >= buttercup_y - 62.03:
+            driver.find_element(By.CSS_SELECTOR, 'body').click()
+
+    time.sleep(1)
+    initials = driver.find_element(By.CSS_SELECTOR, ".styles_input__3823I")
+    initials.send_keys("gee")
+    driver.find_element(By.CSS_SELECTOR, ".styles_submitButton__2B0Uc button").click()
+    time.sleep(1)
+    driver.find_element(By.CSS_SELECTOR, ".styles_backButtonCt__1SJax button").click()
+                </code>
+            </pre>
+            </div>
+            
+            <footer>
+                <div class="container">
+                    <div class="flexbox">
+                        <h3 class="nav-header"><a href="../index.html">ATP</a></h3>
+                        <div class="links">
+                            <a href="../../index.html" class=" bold">Home</a>
+                            <a href="../../public/about.html" class="">About</a>
+                            <a href="../../public/resume.html" class="">Resume</a>
+                            <a href="../../public/projects.html" class="">Projects</a>
+                            <a href="../../public/contact.html" class="">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    
+    </div>
+
+</body>
+</html>

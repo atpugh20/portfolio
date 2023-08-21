@@ -1,0 +1,290 @@
+/* Initial Styling */
+
+body {
+    background-color: forestgreen;
+    color: white
+}
+
+.main {
+    background-color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.test {
+    background-color: red;
+}
+
+.standard-background {
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.smaller-standard-background {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.alt-background{
+    background-color: #111111;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.image-accent-right {
+    width: 250px;
+    height: 250px;
+    background:
+        linear-gradient(to right, forestgreen 10px, transparent 4px) 0 100%,
+        linear-gradient(to left, forestgreen 10px, transparent 4px) 100% 0,
+        linear-gradient(to bottom, forestgreen 10px, transparent 4px) 100% 0,
+        linear-gradient(to top, forestgreen 10px, transparent 4px) 0 100%;
+    background-repeat: no-repeat;
+    background-size: 28.5% 28.5%;
+}
+
+/* Text Styling */
+
+.bold {
+    font-weight: bolder;
+}
+
+.title-text {
+    width: 400px;
+    border-left: solid forestgreen 10px;
+    padding-left: 50px;
+}
+
+.center-align {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.header-font {
+    font-family: 'Vidaloka', serif;
+}
+
+.sub-font {
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.code-font {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 25px;
+}
+
+h5{
+    font-size: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: forestgreen;
+    text-decoration: none;
+}
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* Header and Footer */
+
+.navbar {
+    font-size: 1.1rem;
+    padding-top: 30px;
+    justify-content: space-between;
+}
+
+.links {
+    align-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-header > a {
+    font-family: 'Bruno Ace', cursive;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.nav-logo {
+    height: 25px;
+}
+
+footer h3 {
+    font-size: 5rem;
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+footer .flexbox {
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer .links {
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+    border-right: forestgreen solid 10px;
+}
+
+/* Cards */
+
+.cards {
+    gap: 50px;
+}
+
+.card {
+    background-color: #111111;
+    height: 400px;
+    width: 300px;
+    text-align: center;
+}
+
+.card-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 215px;
+    object-fit: cover;
+}
+
+.border-cards {
+    border-top: solid forestgreen 10px;
+}
+
+.card-text {
+    margin-top: 20px;
+}
+
+p.card-text {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+/* Home page */
+
+.home {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.home-img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    padding: 20px;
+}
+
+.home .image-accent-right {
+    width: 350px;
+    height: 350px;
+}
+
+.skills {
+    text-align: center;
+}
+
+.skills-list {
+    margin-top: 100px;
+}
+
+.skills-img {
+    height: 100px;
+}
+
+.summary h4 {
+    width: 500px;
+    border-left: forestgreen solid 10px;
+    padding-left: 50px;
+}
+
+/* About Page */
+
+.about-item {
+    align-items: center;
+}
+
+.about-item > h3 {
+    max-width: 600px;
+    border-left: solid forestgreen 10px;
+    padding-left: 50px;
+    
+}
+
+.about-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    padding: 20px;
+}
+
+.alt-background > .about-item > h3{
+    text-align: right;
+    border-right: solid forestgreen 10px;
+    padding-right: 50px;
+    border-left: none;
+}
+
+/* Resume */
+
+/* Project Navigation */
+
+.projects {
+    padding-top: 0;
+}
+
+/* Individual Project */
+
+.project {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.project h1 {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#project-github-link {
+    text-decoration: underline;
+}
+
+/* Contact */
+
+.contact {
+    padding-bottom: 300px;
+}
+
+.contact-form {
+    flex-direction: column;
+    max-width: 500px;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
