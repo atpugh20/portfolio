@@ -280,13 +280,14 @@ p.card-text {
 
 .skills-img {
     height: 100px;
-    margin: 50px;
+    margin: 40px;
 }
 
 .summary h4 {
-    width: 500px;
+    max-width: 500px;
     border-left: forestgreen solid 10px;
     padding-left: 50px;
+    margin-right: 50px;
 }
 
 /* About Page */
@@ -359,6 +360,10 @@ p.card-text {
 
 @media (max-width: 992px){
     
+    .body {
+        background-color: none;
+    }
+
     .main{
         margin-left: 0px;
         margin-right: 0px;
@@ -366,10 +371,6 @@ p.card-text {
     
     .home{
         gap: 200px;
-    }
-
-    .home-img {
-        height: ;
     }
 
     .links > .sub-font {
@@ -402,6 +403,10 @@ p.card-text {
 
     .about-item {
         gap: 100px;
+    }
+
+    .about-item h3 {
+        font-size: 25px;
     }
 
     .optic .flexbox {
