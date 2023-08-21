@@ -360,7 +360,7 @@ p.card-text {
 
 @media (max-width: 992px){
     
-    .body {
+    body {
         background-color: black;
     }
 
