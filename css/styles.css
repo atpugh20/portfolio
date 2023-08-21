@@ -361,7 +361,7 @@ p.card-text {
 @media (max-width: 992px){
     
     .body {
-        background-color: none;
+        background-color: black;
     }
 
     .main{
