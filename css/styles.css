@@ -16,19 +16,19 @@ body {
 }
 
 .standard-background {
-    padding-top: 200px;
-    padding-bottom: 200px;
-}
-
-.smaller-standard-background {
     padding-top: 100px;
     padding-bottom: 100px;
 }
 
+.smaller-standard-background {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 .alt-background{
     background-color: #111111;
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .image-accent-right {
@@ -111,7 +111,7 @@ a:hover {
 .flexbox {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 /* Header and Footer */
@@ -119,14 +119,13 @@ a:hover {
 .navbar {
     font-size: 1.1rem;
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
+    flex-wrap: nowrap;
 }
 
 .links {
     align-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 40px;
 }
 
 .nav-header {
@@ -166,18 +165,13 @@ footer .links {
     border-right: forestgreen solid 10px;
 }
 
-footer .nav-header, .links {
-    margin-left: 40px;
-    margin-right: 40px;
-}
-
 /* Dropdown Toolbar */
 
 .navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background: black;
+    background: transparent;
 }
 
 .navbar li {
@@ -220,6 +214,7 @@ footer .nav-header, .links {
 
 .cards {
     gap: 50px;
+    
 }
 
 .card {
@@ -254,7 +249,6 @@ p.card-text {
 /* Home page */
 
 .home {
-    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -276,11 +270,15 @@ p.card-text {
 
 .skills-list {
     margin-top: 100px;
+    justify-content: space-evenly;
 }
 
 .skills-img {
     height: 100px;
-    margin: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .summary h4 {
@@ -318,6 +316,11 @@ p.card-text {
 }
 
 /* Resume */
+
+.resume img{
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
 /* Project Navigation */
 
@@ -369,6 +372,10 @@ p.card-text {
         margin-right: 0px;
     }
     
+    .flexbox {
+        justify-content: space-evenly;
+    }
+
     .home {
         gap: 200px;
     }
