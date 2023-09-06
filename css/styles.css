@@ -1,14 +1,19 @@
 /* Initial Styling */
 
 body {
-    background-color: forestgreen;
+    background-color: black;
     color: white
 }
 
-.main {
-    background-color: black;
-    margin-left: 20px;
-    margin-right: 20px;
+img {
+    position: relative;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1100px;
+    padding-left: 75px;
+    padding-right: 75px;
 }
 
 .test {
@@ -16,19 +21,27 @@ body {
 }
 
 .standard-background {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(10, 10, 10);
 }
 
 .smaller-standard-background {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
+    background-color: rgb(10, 10, 10);
+}
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .alt-background{
     background-color: #111111;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .image-accent-right {
@@ -54,7 +67,7 @@ body {
 }
 
 .title-text {
-    width: 400px;
+    width: 300px;
     border-left: solid forestgreen 10px;
     padding-left: 50px;
 }
@@ -79,23 +92,27 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 3rem;
-}
-
-h3 {
     font-size: 2rem;
 }
 
+h3 {
+    font-size: 1.5rem;
+}
+
 h4 {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 h5{
-    font-size: 20px;
+    font-size: 15px;
+}
+
+p {
+    font-size: 13px;
 }
 
 a {
@@ -108,18 +125,12 @@ a:hover {
     text-decoration: none;
 }
 
-.flexbox {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
 /* Header and Footer */
 
 .navbar {
     font-size: 1.1rem;
-    justify-content: space-between;
     flex-wrap: nowrap;
+    background-color: rgb(10, 10, 10);
 }
 
 .links {
@@ -142,7 +153,15 @@ a:hover {
     height: 25px;
 }
 
-footer {
+.dropdown {
+    display: none;
+}
+
+.dropbtn {
+    display: none;
+}
+
+footer .container {
     padding-top: 100px;
     padding-bottom: 100px;
 }
@@ -167,69 +186,69 @@ footer .links {
 
 /* Dropdown Toolbar */
 
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background: transparent;
-}
-
-.navbar li {
-    display: inline-block;
-}
-
-.navbar li a {
-    color: white;
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-}
-
-.navbar ul ul {
-    position: absolute;
-    top: 100%;
+ .dropbtn {
+    background-color: rgb(10, 10, 10);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+    
+  .dropdown {
+    position: relative;
     display: none;
-}
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: -30px;
+    top: 35px;
+    background-color: #111111;
+    border-radius: 5%;
+    min-width: 50px;
+    box-shadow: 0px 16px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
 
-.navbar ul ul li {
-    display: block;
+
+  .dropdown-content a {
+    color: white;
     text-align: right;
-}
-
-.navbar li:hover ul {
+    padding: 12px 16px;
+    text-decoration: none;
     display: block;
-}
-
-.navbar ul li ul a:hover {
+  }
+  
+  .dropdown-content a:hover {
     color: forestgreen;
     text-decoration: none;
+    transition: 200ms;
 }
+  
+  .show {
+    display:block;
+} 
 
-.navbar ul li ul{
-    top: 45px;
-    right: 0px
-}
 
 /* Cards */
 
 .cards {
-    gap: 50px;
-    
+    gap: 25px;
 }
-
 .card {
     background-color: #111111;
-    height: 400px;
-    width: 300px;
+    height: 300px;
+    width: 225px;
     text-align: center;
+    margin-top: 50px;
 }
 
 .card-img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 250px;
-    height: 215px;
+    width: 187.5px;
+    height: 161.25px;
     object-fit: cover;
 }
 
@@ -238,30 +257,30 @@ footer .links {
 }
 
 .card-text {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 p.card-text {
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 18.75px;
+    margin-right: 18.75px;
 }
 
 /* Home page */
 
-.home {
+.hero {
     align-items: center;
 }
 
-.home-img {
-    width: 350px;
-    height: 350px;
+.hero-img {
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     padding: 20px;
 }
 
-.home .image-accent-right {
-    width: 350px;
-    height: 350px;
+.hero .image-accent-right {
+    width: 300px;
+    height: 300px;
 }
 
 .skills {
@@ -269,16 +288,15 @@ p.card-text {
 }
 
 .skills-list {
-    margin-top: 100px;
-    justify-content: space-evenly;
+    margin-top: 50px;
 }
 
 .skills-img {
     height: 100px;
     margin-top: 40px;
     margin-bottom: 40px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 .summary h4 {
@@ -361,70 +379,45 @@ p.card-text {
 
 /* Device Adjustments */
 
-@media (max-width: 992px){
-    
-    body {
-        background-color: black;
+@media (max-width: 834px) {
+    .links .sub-font {
+        display: none;
     }
 
-    .main {
-        margin-left: 0px;
-        margin-right: 0px;
+    .dropdown {
+        display: inline-block;
     }
     
+    .dropbtn {
+        display: inline-block;
+    }
+
     .flexbox {
         justify-content: space-evenly;
     }
 
-    .home {
-        gap: 200px;
+    .hero {
+        gap: 50px;
+    }
+    .summary .flexbox{
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+    .summary h2 {
+        text-align: center;
     }
 
-    .links > .sub-font {
-        display: none;
-    }
 
-    .navbar {
-        justify-content: space-between;
+}
+
+@media (max-width: 480px) {
+    
+    .container {
+        padding-left: 0;
         padding-right: 0;
     }
-
-    .navbar ul {
-        display: block;
-    }
- 
-    .summary .flexbox {
-        flex-direction: column-reverse;
-        gap: 100px;
-        align-content: center;
-    }
-
-    .summary h2 {
-        text-align: center;    
-    }
-
     .summary h4 {
-        max-width: 400px;
-        font-size: 20px;
+        font-size: 10px;
     }
-
-    .about-item {
-        gap: 100px;
-    }
-
-    .about-item h3 {
-        font-size: 25px;
-    }
-
-    .optic .flexbox {
-        flex-direction: column-reverse;
-    }
-
-    .alt-background > .about-item > h3{
-        text-align: left;
-        border-left: solid forestgreen 10px;
-        padding-left: 50px;
-        border-right: none;
-    }
-
+    
 }
