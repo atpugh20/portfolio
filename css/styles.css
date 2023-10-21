@@ -205,12 +205,11 @@ footer .links {
     right: -30px;
     top: 35px;
     background-color: #111111;
-    border-radius: 5%;
+    border-radius: 10px;
     min-width: 50px;
     box-shadow: 0px 16px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
-
 
   .dropdown-content a {
     color: white;
@@ -288,16 +287,17 @@ p.card-text {
     text-align: center;
 }
 
-.skills-list {
+.skills-list.flexbox {
     margin-top: 50px;
+    justify-content: space-evenly;
 }
 
 .skills-img {
     height: 100px;
     margin-top: 40px;
     margin-bottom: 40px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 .summary h4 {
@@ -383,20 +383,16 @@ p.card-text {
     .dropdown {
         display: inline-block;
     }
-    
+
     .dropbtn {
         display: inline-block;
     }
-
     .flexbox {
         justify-content: space-evenly;
     }
-
     .flexbox.navbar {
         justify-content: space-between;
     }
-    
-
     .hero {
         gap: 50px;
     }
@@ -407,8 +403,13 @@ p.card-text {
     .summary h2 {
         text-align: center;
     }
-
-
+    .skills-img {
+        height: 75px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -424,5 +425,10 @@ p.card-text {
     .flexbox.navbar {
         justify-content: space-evenly;
     }
-    
+
+    .skills-img {
+        height: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
