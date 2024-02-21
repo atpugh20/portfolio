@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=JetBrains+Mono&family=Maven+Pro&family=Vidaloka&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <title>Projects - Clip Sharer</title>
+  </head>
+  <body>
+    <div class="main">
+      <nav class="navbar container flexbox">
+        <h4 class="nav-header"><a href="../../index.html">ATP</a></h4>
+        <div class="links flexbox">
+          <a href="../../index.html" class="sub-font bold">Home</a>
+          <a href="../projects.html" class="sub-font bold">Projects</a>
+          <a href="../resume.html" class="sub-font bold">Resume</a>
+          <a href="../about.html" class="sub-font bold">About</a>
+          <a href="https://www.linkedin.com/in/alexandertpugh/"
+            ><img
+              src="../../assets/images/linkedin.svg"
+              class="nav-logo"
+              alt=""
+          /></a>
+          <a href="https://github.com/atpugh20"
+            ><img src="../../assets/images/github.svg" class="nav-logo" alt=""
+          /></a>
+        </div>
+        <div class="dropdown">
+          <button onclick="dropDown()" class="dropbtn">
+            <img
+              src="../../assets/images/menu.svg"
+              class="dropbtn nav-logo"
+              alt=""
+            />
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="../../index.html" class="sub-font bold">Home</a>
+            <a href="../projects.html" class="sub-font bold">Projects</a>
+            <a href="../resume.html" class="sub-font bold">Resume</a>
+            <a href="../about.html" class="sub-font bold">About</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="project smaller-standard-background container alt-hero">
+        <h1 class="header-font bold">Video Game Clip Sharer</h1>
+      </div>
+      <div class="alt-background container">
+        <div class="project-intro">
+          <div>
+            <h4>Skills used:</h4>
+            <ul>
+              <li>EJS</li>
+              <li>Node.js</li>
+              <li>Express.js</li>
+              <li>PostgreSQL</li>
+              <li>AWS S3</li>
+              <li>AWS EC2</li>
+              <li>AWS RDS</li>
+            </ul>
+          </div>
+          <a
+            class="sub-font bold"
+            id="project-github-link"
+            href="https://geenetclips.com"
+            >Click here to see the website</a
+          >
+        </div>
+        <hr />
+        <div class="project-description">
+          <div class="project-description-text">
+            <p>
+              I made this website so that my friends and I can easily share
+              clips from our times gaming together. Anyone can make a standard
+              account to view and like the posted videos. However, only super
+              users will be able to add videos and comment on them. This will
+              not only keep the videos exclusive to our group, but it will also
+              prevent bots from overloading the storage.
+            </p>
+            <p>
+              The express server passes data into the website using EJS. It runs
+              on an AWS EC2 instance with PM2 to keep it continuously running.
+            </p>
+            <p>
+              Information about the users, videos, comments, and likes are
+              stored in a PostgreSQL database. When a user is deleted, all their
+              likes and videos are deleted as well.
+            </p>
+            <p>
+              The videos are stored using an AWS S3 Bucket. The website
+              retrieves a CloudFront URL from the database and embeds the video
+              onto the page. The maximum video size is 100MB, to keep them at
+              around 30 seconds each.
+            </p>
+          </div>
+          <img
+            class="project-gif"
+            src="../../assets/gifs/clipsharer-demo.gif"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="container standard-background"></div>
+
+      <footer>
+        <div class="container standard-background">
+          <div class="flexbox">
+            <h3 class="nav-header"><a href="./index.html">ATP</a></h3>
+            <div class="links">
+              <a href="../../index.html" class="bold">Home</a>
+              <a href="../resume.html" class="">Resume</a>
+              <a href="../projects.html" class="">Projects</a>
+              <a href="../about.html" class="">About</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../../js/index.js"></script>
+  </body>
+</html>

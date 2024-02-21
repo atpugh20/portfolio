@@ -21,12 +21,12 @@
                     <a href="../projects.html" class="sub-font bold">Projects</a>
                     <a href="../resume.html" class="sub-font bold">Resume</a>
                     <a href="../about.html" class="sub-font bold">About</a>
-                    <a href="https://www.linkedin.com/in/alexandertpugh/"><img src="../../assets/linkedin.svg" class="nav-logo" alt=""></a>
-                    <a href="https://github.com/atpugh20"><img src="../../assets/github.svg" class="nav-logo" alt=""></a>
+                    <a href="https://www.linkedin.com/in/alexandertpugh/"><img src="../../assets/images/linkedin.svg" class="nav-logo" alt=""></a>
+                    <a href="https://github.com/atpugh20"><img src="../../assets/images/github.svg" class="nav-logo" alt=""></a>
                 </div>
                 <div class="dropdown">
                     <button onclick="dropDown()" class="dropbtn">
-                      <img src="../../assets/menu.svg" class="dropbtn nav-logo" alt="">
+                      <img src="../../assets/images/menu.svg" class="dropbtn nav-logo" alt="">
                     </button>
                     <div id="myDropdown" class="dropdown-content">
                         <a href="../../index.html" class="sub-font bold">Home</a>
@@ -68,14 +68,14 @@ var noteChecker = 0;
 $("#freestyleBtn").on("click", function(){
     endGame();
     playSound("menuSelect");
-    $("#ocarina-container").css("background-image", "url(../assets/ocarina/img/scrubs.png)");
+    $("#ocarina-container").css("background-image", "url(../assets/images/ocarina/img/scrubs.png)");
 });
 
 $("#scrubBtn").on("click", function(){
     if (!gameStarted) {
         removeNotes();
         playSound("menuSelect");
-        $("#ocarina-container").css("background-image", "url(../assets/ocarina/img/scrubs.png)");
+        $("#ocarina-container").css("background-image", "url(../assets/images/ocarina/img/scrubs.png)");
         startGame();
     };
 });
@@ -109,7 +109,7 @@ function animatePress(currentNote) {
 }
 
 function playSound(name) {
-    var audio = new Audio("../assets/ocarina/audio/" + name + ".wav");
+    var audio = new Audio("../assets/images/ocarina/audio/" + name + ".wav");
     audio.play();
 }
 
@@ -123,7 +123,7 @@ function addNote(currentNote) {
     };
     if (playableNotes.includes(currentNote)) {
         let addedNote = "#note" + String(noteCounter);
-        $(addedNote).attr("src", `../assets/ocarina/img/${currentNote}.svg`)
+        $(addedNote).attr("src", `../assets/images/ocarina/img/${currentNote}.svg`)
         $(addedNote).removeClass("hidden");
         if ($("#ocarina-container").css("max-width") === "400px") {
             $(addedNote).css("top", noteHeightMobile[playableNotes.indexOf(currentNote)]);
@@ -160,7 +160,7 @@ function songCheck() {
     songs.forEach((e) => {
         if (e.every((val, index) => val === userPlayedPattern[index])) {
             correct();
-            $("#ocarina-container").css("background-image", `url(../assets/ocarina/img/bg${String(songs.indexOf(e) + 1)}.png)`);
+            $("#ocarina-container").css("background-image", `url(../assets/images/ocarina/img/bg${String(songs.indexOf(e) + 1)}.png)`);
         };
     });
 }

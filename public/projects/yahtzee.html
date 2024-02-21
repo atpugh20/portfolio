@@ -21,12 +21,12 @@
                     <a href="../projects.html" class="sub-font bold">Projects</a>
                     <a href="../resume.html" class="sub-font bold">Resume</a>
                     <a href="../about.html" class="sub-font bold">About</a>
-                    <a href="https://www.linkedin.com/in/alexandertpugh/"><img src="../../assets/linkedin.svg" class="nav-logo" alt=""></a>
-                    <a href="https://github.com/atpugh20"><img src="../../assets/github.svg" class="nav-logo" alt=""></a>
+                    <a href="https://www.linkedin.com/in/alexandertpugh/"><img src="../../assets/images/linkedin.svg" class="nav-logo" alt=""></a>
+                    <a href="https://github.com/atpugh20"><img src="../../assets/images/github.svg" class="nav-logo" alt=""></a>
                 </div>
                 <div class="dropdown">
                     <button onclick="dropDown()" class="dropbtn">
-                      <img src="../../assets/menu.svg" class="dropbtn nav-logo" alt="">
+                      <img src="../../assets/images/menu.svg" class="dropbtn nav-logo" alt="">
                     </button>
                     <div id="myDropdown" class="dropdown-content">
                         <a href="../../index.html" class="sub-font bold">Home</a>
@@ -98,7 +98,7 @@ function roll() {
     for (let i = 0; i < 5; i++) {
         let rollNum = (Math.floor(Math.random() * 6) + 1);
         if (!dice[i].classList.contains("held")){
-            dice[i].setAttribute("src", `../assets/yahtzee/dice${rollNum}.png`);
+            dice[i].setAttribute("src", `../assets/images/yahtzee/dice${rollNum}.png`);
             rollList[i] = rollNum;
         };
     };
