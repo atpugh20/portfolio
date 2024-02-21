@@ -377,11 +377,11 @@ p.card-text {
 .project-gif {
   width: 100%;
   height: 100%;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .project-description-text {
-  max-width: 300px;
+  max-width: 400px;
 }
 
 .project-intro {
