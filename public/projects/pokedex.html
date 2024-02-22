@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../../css/styles.css" />
-    <title>Projects - Clip Sharer</title>
+    <title>Projects - React.js Pokédex</title>
   </head>
   <body>
     <div class="main">
@@ -55,26 +55,21 @@
       </nav>
 
       <div class="project smaller-standard-background container alt-hero">
-        <h1 class="header-font bold">Video Game Clip Sharer</h1>
+        <h1 class="header-font bold">React.js Pokédex</h1>
       </div>
       <div class="alt-background container">
         <div class="project-intro">
           <div class="project-skills-section">
             <h4>Skills used:</h4>
-            <ul class="project-skills-2">
-              <li>EJS</li>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>PostgreSQL</li>
-              <li>AWS S3</li>
-              <li>AWS EC2</li>
-              <li>AWS RDS</li>
+            <ul class="project-skills-1">
+              <li>JavaScript</li>
+              <li>React.js</li>
             </ul>
           </div>
           <a
             class="sub-font bold"
             id="project-github-link"
-            href="https://geenetclips.com"
+            href="https://atpugh20.github.io/pokedex/"
             ><button class="project-link">Visit Website</button></a
           >
         </div>
@@ -82,37 +77,37 @@
         <div class="project-description">
           <div class="project-description-text">
             <p>
-              I made this website so that my friends and I can easily share
-              clips from our times gaming together. Anyone can make a standard
-              account to view and like the posted videos. However, only super
-              users will be able to add videos and comment on them. This will
-              not only keep the videos exclusive to our group, but it will also
-              prevent bots from overloading the storage.
+              The Pokédex uses a fetch request to pull data from PokéAPI. The
+              data is then saved to local storage as an array of objects to
+              speed up future loading times.
             </p>
             <p>
-              The express server passes data into the website using EJS. It runs
-              on an AWS EC2 instance with PM2 to keep it continuously running.
+              I chose to continue using the API on the initial load instead of
+              the already gathered data. This is so that when there are more
+              Pokémon inevitably added to the API, the program will be able to
+              update itself, rather than me having to go in and update the array
+              every time that a new Pokémon game comes out.
             </p>
             <p>
-              Information about the users, videos, comments, and likes are
-              stored in a PostgreSQL database. When a user is deleted, all their
-              likes and videos are deleted as well.
+              The Pokédex uses React’s useState function and a custom sortData
+              function to dynamically update which cards are displayed on the
+              screen.
             </p>
             <p>
-              The videos are stored using an AWS S3 Bucket. The website
-              retrieves a CloudFront URL from the database and embeds the video
-              onto the page. The maximum video size is 100MB, to keep them at
-              around 30 seconds each.
+              The biggest issue facing this project is the extensive initial
+              loading time, especially on mobile devices. My current ideas for
+              fixing this issue are as follows: Hard-coding the fetched data and
+              checking for additional Pokémon with an API call. Having an
+              initial API call that fetches the metadata, then making additional
+              calls when the data is needed. Checking the API documentation to
+              see if it is possible to combine API calls that are related by the
+              Pokémon itself.
             </p>
           </div>
-          <img
-            class="project-gif"
-            src="../../assets/gifs/clipsharer-demo.gif"
-            alt=""
-          />
+
+          <img class="project-gif" src="../../assets/gifs/pokedex.gif" alt="" />
         </div>
       </div>
-      <div class="container standard-background"></div>
 
       <footer>
         <div class="container standard-background">

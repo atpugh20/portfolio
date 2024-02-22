@@ -1,49 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=JetBrains+Mono&family=Maven+Pro&family=Vidaloka&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/styles.css">
-    <title>Yahtzee Code</title>
-</head>
-<body>
- 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=JetBrains+Mono&family=Maven+Pro&family=Vidaloka&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <title>Projects - Yahtzee</title>
+  </head>
+  <body>
     <div class="main">
+      <nav class="navbar container flexbox">
+        <h4 class="nav-header"><a href="../../index.html">ATP</a></h4>
+        <div class="links flexbox">
+          <a href="../../index.html" class="sub-font bold">Home</a>
+          <a href="../projects.html" class="sub-font bold">Projects</a>
+          <a href="../resume.html" class="sub-font bold">Resume</a>
+          <a href="../about.html" class="sub-font bold">About</a>
+          <a href="https://www.linkedin.com/in/alexandertpugh/"
+            ><img
+              src="../../assets/images/linkedin.svg"
+              class="nav-logo"
+              alt=""
+          /></a>
+          <a href="https://github.com/atpugh20"
+            ><img src="../../assets/images/github.svg" class="nav-logo" alt=""
+          /></a>
+        </div>
+        <div class="dropdown">
+          <button onclick="dropDown()" class="dropbtn">
+            <img
+              src="../../assets/images/menu.svg"
+              class="dropbtn nav-logo"
+              alt=""
+            />
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="../../index.html" class="sub-font bold">Home</a>
+            <a href="../projects.html" class="sub-font bold">Projects</a>
+            <a href="../resume.html" class="sub-font bold">Resume</a>
+            <a href="../about.html" class="sub-font bold">About</a>
+          </div>
+        </div>
+      </nav>
 
-            <nav class="navbar container flexbox">  
-                <h4 class="nav-header"><a href="../../index.html">ATP</a></h4>
-                <div class="links flexbox">
-                    <a href="../../index.html" class="sub-font bold">Home</a>
-                    <a href="../projects.html" class="sub-font bold">Projects</a>
-                    <a href="../resume.html" class="sub-font bold">Resume</a>
-                    <a href="../about.html" class="sub-font bold">About</a>
-                    <a href="https://www.linkedin.com/in/alexandertpugh/"><img src="../../assets/images/linkedin.svg" class="nav-logo" alt=""></a>
-                    <a href="https://github.com/atpugh20"><img src="../../assets/images/github.svg" class="nav-logo" alt=""></a>
-                </div>
-                <div class="dropdown">
-                    <button onclick="dropDown()" class="dropbtn">
-                      <img src="../../assets/images/menu.svg" class="dropbtn nav-logo" alt="">
-                    </button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="../../index.html" class="sub-font bold">Home</a>
-                        <a href="../projects.html" class="sub-font bold">Projects</a>
-                        <a href="../resume.html" class="sub-font bold">Resume</a>
-                        <a href="../about.html" class="sub-font bold">About</a>                
-                    </div>
-                </div> 
-            </nav>
-
-            <div class="project standard-background container">
-                <h1 class="header-text bold">Yahtzee JavaScript Code:</h1>
-            </div>
-            <div class="container alt-background">
-                <a class="sub-font bold" id="project-github-link" href="https://atpugh20.github.io/geenet-games/public/yahtzee.html">Click here to play the game</a>
-                <pre>
-                    <code class="code">
+      <div class="project smaller-standard-background container alt-hero">
+        <h1 class="header-font bold">Yahtzee</h1>
+      </div>
+      <div class="alt-background container">
+        <div class="project-intro">
+          <div class="project-skills-section">
+            <h4>Skills used:</h4>
+            <ul class="project-skills-1">
+              <li>HTML5 / CSS3</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <a
+            class="sub-font bold"
+            id="project-github-link"
+            href="https://atpugh20.github.io/geenet-games/public/yahtzee"
+            ><button class="project-link">Play Game</button></a
+          >
+        </div>
+        <hr />
+        <div class="project-description">
+          <div class="project-description-text">
+            <p>
+              The Yahtzee player uses JavaScript to add functionality to various
+              HTML elements. These elements include dice, tables, and buttons.
+            </p>
+            <p>
+              The script performs different calculations depending on what cell
+              you are trying to fill in the score table. For example, the large
+              straight calculation checks to see if the roll has both five
+              unique numbers and if these five unique numbers are sequential.
+            </p>
+            <p>
+              The more complex calculations like this can be found in the
+              validateLower() function in the code below.
+            </p>
+          </div>
+          <img class="project-gif" src="../../assets/gifs/yahtzee.gif" alt="" />
+        </div>
+      </div>
+      <div class="container standard-background">
+        <h5>Code:</h5>
+        <pre>
+          <code class="code">
 var firstRoll = true;
 var upperRowsComplete = 0;
 var lowerRowsComplete = 0
@@ -219,28 +273,26 @@ function bonusYahtzeeCheck() {
 function playAgain() {
     location.reload();
 }
-                        
-                </code>
-            </pre>
-            </div>
-            
-            <footer>
-                <div class="container standard-background">
-                    <div class="flexbox">
-                        <h3 class="nav-header"><a href="./index.html">ATP</a></h3>
-                        <div class="links">
-                            <a href="../../index.html" class=" bold">Home</a>
-                            <a href="../resume.html" class="">Resume</a>
-                            <a href="../projects.html" class="">Projects</a>
-                            <a href="../about.html" class="">About</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+              
+      </code>
+  </pre>
+      </div>
 
+      <footer>
+        <div class="container standard-background">
+          <div class="flexbox">
+            <h3 class="nav-header"><a href="./index.html">ATP</a></h3>
+            <div class="links">
+              <a href="../../index.html" class="bold">Home</a>
+              <a href="../resume.html" class="">Resume</a>
+              <a href="../projects.html" class="">Projects</a>
+              <a href="../about.html" class="">About</a>
+            </div>
+          </div>
         </div>
-    
+      </footer>
     </div>
-<script src="../../js/index.js"></script>
-</body>
+
+    <script src="../../js/index.js"></script>
+  </body>
 </html>
