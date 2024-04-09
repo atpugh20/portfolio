@@ -61,14 +61,11 @@
         <div class="project-intro">
           <div class="project-skills-section">
             <h4>Skills used:</h4>
-            <ul class="project-skills-2">
-              <li>EJS</li>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>PostgreSQL</li>
+            <ul class="project-skills-1">
+              <li>PHP</li>
+              <li>JavaScript</li>
+              <li>MySQL</li>
               <li>AWS S3</li>
-              <li>AWS EC2</li>
-              <li>AWS RDS</li>
             </ul>
           </div>
           <a
@@ -83,26 +80,28 @@
           <div class="project-description-text">
             <p>
               I made this website so that my friends and I can easily share
-              clips from our times gaming together. Anyone can make a standard
-              account to view and like the posted videos. However, only super
-              users will be able to add videos and comment on them. This will
-              not only keep the videos exclusive to our group, but it will also
-              prevent bots from overloading the storage.
+              clips from our times gaming together.
             </p>
             <p>
-              The express server passes data into the website using EJS. It runs
-              on an AWS EC2 instance with PM2 to keep it continuously running.
+              Originally, this website was built with Node.js, Express.js, and
+              PostgreSQL hosted on an AWS EC2 Linux instance. Reaching the
+              limits of the AWS Free Tier, I needed another solution. Turns out,
+              our family has a Siteground membership, so I was able to host my
+              website there! However, that would mean I would need to rewrite
+              the server code into PHP and switch from from PostgreSQL to MySQL.
             </p>
             <p>
               Information about the users, videos, comments, and likes are
-              stored in a PostgreSQL database. When a user is deleted, all their
-              likes and videos are deleted as well.
+              stored in the database. When a user is deleted, all their likes
+              and videos are deleted as well. Using a custom Database class, the
+              PHP server sends a query, and uses the returned information.
             </p>
             <p>
-              The videos are stored using an AWS S3 Bucket. The website
+              The videos are still stored using an AWS S3 Bucket. The website
               retrieves a CloudFront URL from the database and embeds the video
               onto the page. The maximum video size is 100MB, to keep them at
-              around 30 seconds each.
+              around 30 seconds each. The server uses a custom Storage class for
+              this.
             </p>
           </div>
           <img
