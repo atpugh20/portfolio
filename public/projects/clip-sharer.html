@@ -79,29 +79,29 @@
         <div class="project-description">
           <div class="project-description-text">
             <p>
-              I made this website so that my friends and I can easily share
+              I developed this website so that my friends and I can easily share
               clips from our times gaming together.
             </p>
             <p>
               Originally, this website was built with Node.js, Express.js, and
-              PostgreSQL hosted on an AWS EC2 Linux instance. Reaching the
-              limits of the AWS Free Tier, I needed another solution. Turns out,
-              our family has a Siteground membership, so I was able to host my
-              website there! However, that would mean I would need to rewrite
-              the server code into PHP and switch from from PostgreSQL to MySQL.
+              PostgreSQL. It was hosted on an AWS EC2 Linux instance. Reaching
+              the limits of the AWS Free Tier, I needed new solution. Our family
+              has a Siteground membership, so I was able to host my website
+              there! However, this meant I needed to rewrite the server code
+              into PHP and switch from from PostgreSQL to MySQL.
             </p>
             <p>
               Information about the users, videos, comments, and likes are
               stored in the database. When a user is deleted, all their likes
-              and videos are deleted as well. Using a custom Database class, the
-              PHP server sends a query, and uses the returned information.
+              and videos are also deleted. The PHP server uses a custom Database
+              class to send a query, and embeds the returned information onto
+              the page.
             </p>
             <p>
-              The videos are still stored using an AWS S3 Bucket. The website
+              The videos are stored using an AWS S3 Bucket. The website
               retrieves a CloudFront URL from the database and embeds the video
               onto the page. The maximum video size is 100MB, to keep them at
-              around 30 seconds each. The server uses a custom Storage class for
-              this.
+              around 30 seconds each. This uses a custom Storage class.
             </p>
           </div>
           <img
