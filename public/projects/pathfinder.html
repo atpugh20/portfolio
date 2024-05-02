@@ -108,9 +108,28 @@
             alt=""
           />
         </div>
+        <br /><br />
+        <div class="project-description">
+          <div class="project-description-text">
+            <p>
+              There is also a maze generation button that can be used to create
+              unique pathing options.
+            </p>
+            <p>
+              The maze is generated with a Depth-first recursion algorithm.
+              First, every square is filled with a wall. Then, a random start
+              point is found. This point is marked as visited. Then, one of the
+              neighbor squares are picked at random, and the wall is erased. If
+              all the neighbors have been visited, then the function backtracks.
+              It continues to check for unvisited squares until every square has
+              been visited. The path is then returned and animated.
+            </p>
+          </div>
+          <img class="project-gif" src="../../assets/gifs/maze.gif" alt="" />
+        </div>
       </div>
       <div class="container standard-background">
-        <h5>Dijkstra's Algorithm Code:</h5>
+        <h5>Dijkstra's Pathfinding Algorithm Code:</h5>
         <pre>
           <code class="code">
 export default function dijkstra(originalGrid) {
@@ -140,6 +159,34 @@ export default function dijkstra(originalGrid) {
   console.log("No finish node set!");
   return visitedNodes;
 }  
+      </code>
+  </pre>
+        <h5>Depth-first Recursion Maze Generation Code:</h5>
+        <pre>
+          <code class="code">
+export default function buildDepthFirstMaze(grid) {
+  const visitedNodes = [];
+  clearBoard(grid);
+  initialWallFill(grid);
+  const availableNodes = getAvailableNodes(grid);
+  const startNode = getRandomStartNode(availableNodes);
+  carvePath(startNode, grid, visitedNodes);
+  console.log(visitedNodes);
+  return visitedNodes;
+}
+
+function carvePath(currentNode, grid, visitedNodes) {
+  if (currentNode.isMazeVisited) return;
+  currentNode.isMazeVisited = true;
+  visitedNodes.push(currentNode);
+  const neighbors = getAvailableNeighbors(currentNode, grid);
+  for (let neighbor of neighbors) {
+    if (!neighbor.isMazeVisited) {
+      neighbor.previousMazeNode = currentNode;
+      carvePath(neighbor, grid, visitedNodes);
+    }
+  }
+}
       </code>
   </pre>
       </div>
