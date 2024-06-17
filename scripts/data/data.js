@@ -75,9 +75,6 @@ const projectData = [
     gif2: "",
     link: "https://github.com/atpugh20/buttercupgo-player/blob/main/main.py",
   },
-];
-
-const challengeData = [
   {
     title: "Space Canvas",
     icon: "/assets/images/challenges/space.png",
@@ -173,6 +170,18 @@ const challengeData = [
     description2: "",
     gif2: "",
     link: "https://atpugh20.github.io/coding-challenges/views/flow-field.html",
+  },
+  {
+    title: "Flow Field 2 - Perlin Noise",
+    icon: "/assets/images/challenges/flow2.png",
+    summary:
+      "This project moves the particles differently than the original flow field.",
+    description1:
+      "Instead of using vectors to determine the direction the particles move in, this project applies the noise to the particles directly. The noise method takes in the particle’s scaled x and y coordinates as parameters. This makes particles that are close together move similarly.  The returned noise is the angle that the particle will move at. I then took the sine and cosine of this angle to give the particle velocity. By itself, the angle creates chaotic movement in some areas of the canvas. I was able to eliminate this problem by dividing the velocity by 0.2. <br><br>Like before, the user can change many aspects of the flow field, such as the number of particles and the scale of the field. <br><br>For the noise algorithm, I use a library created by Joe Iddon. Their algorithm generates a number between -1 and 1. <br><br>The library can be found at: https://github.com/joeiddon/perlin.",
+    gif1: "/assets/gifs/flow2.gif",
+    description2: "",
+    gif2: "",
+    link: "https://atpugh20.github.io/coding-challenges/views/flow-field-2.html",
   },
   {
     title: "2-D Ball Simulation",

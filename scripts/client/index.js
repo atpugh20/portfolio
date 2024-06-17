@@ -110,11 +110,7 @@ function showProjectModal(e) {
     projectModal.classList.add("shown-modal");
     body.height = "100vh";
     body.style.overflowY = "hidden";
-    if (e.target.dataset.type == "project") {
-      fillProjectModal(e, projectData);
-    } else {
-      fillProjectModal(e, challengeData);
-    }
+    fillProjectModal(e, projectData);
   }
 }
 
