@@ -122,9 +122,9 @@ function showProjectModal(e) {
 function fillProjectModal(e, data) {
   const index = Number(e.target.attributes.value.value);
   // ensures that the second section is shown
-  modalLink.style.display = "inherit";
-  text2.style.display = "inherit";
-  gif2.style.display = "inherit";
+  modalLink.style.display = "inline";
+  text2.style.display = "inline";
+  gif2.style.display = "inline";
   // if only redirect, then open new tab and close the modal
   if (data[index].redirect) {
     window.open(data[index].link);

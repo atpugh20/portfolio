@@ -22,7 +22,7 @@ const starCount = cW;
 window.addEventListener("load", setup);
 // resizing the window will reload the canvas to match new dimensions
 window.addEventListener("resize", () => {
-  if (window.innerWidth != cW || window.innerHeight != cH) {
+  if (window.innerWidth != cW) {
     resetup();
   }
 });

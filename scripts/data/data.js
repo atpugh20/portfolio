@@ -81,11 +81,14 @@ const challengeData = [
   {
     title: "Space Canvas",
     icon: "/assets/images/challenges/space.png",
-    summary: "",
-    description1: "",
-    gif1: "",
-    description2: "",
-    gif2: "",
+    summary:
+      "This project serves as the background for this website, and uses a parallax effect to draw space with depth.",
+    description1:
+      "There are five different classes used. These are Star, Ship, Boost, Asteroid, and OtherShip. Ship and Boost are singular instances that affect each other. Star, Asteroid, and OtherShip all have multiple instances that are established at the beginning of the program. <br><br>Star, Asteroid, and OtherShip each have a distance property. This distance is a random number between 1 and 10. If the object is closer (1) then it is larger and faster. If the object is further (10) then it is smaller and slower. This creates a parallax effect. <br><br>Each asteroid is a circle-like shape. Each has a set number of vertices. The vertex’s position is calculated by taking the asteroids radius and adding a number between -radius / 4 and radius / 4. It does this for each vertex’s direction, which is calculated with 360 / vertexNum.",
+    gif1: "/assets/gifs/stars.gif",
+    description2:
+      "Both the ship and the boost move in a wave-like motion. The ships Y coordinate is calculated using the sine of an X value that increases every frame. The ship moves up and down consistently with this. The boost is drawn behind the ship as a series of small circles that are connected. <br><br>To get the ship to rotate accurately with the boost wave, the canvas of the ship needed to be rotated. The angle of rotation is calculated by getting the cosine of the same X value, dividing it by Pi, and multiplying it by -1.",
+    gif2: "/assets/gifs/ship.gif",
     link: "",
   },
   {
