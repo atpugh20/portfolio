@@ -196,9 +196,43 @@ const projectData = [
       "This project simulates how certain balls move and bounce with gravity.",
     description1:
       "The Ball class is used to create each ball. The constructor takes parameters that are attributes of the specific ball. These attributes are stored in JavaScript objects. The parameters are the radius, color, and stopping ratio. <br><br>Each Ball object has a position, velocity, and acceleration. The acceleration is gravity, which I represent with the formula: 9.8 * Scale / FPS. This scales gravity to the size of the canvas and the value of the FPS. The acceleration is applied to the velocity, which is then applied to the ball’s position. <br><br>The stopping ratio represents the bounciness of the ball. When the ball eventually hits the edge of the canvas, it bounces in the opposite direction. The stopping ratio is multiplied by this new velocity, creating the new reduced velocity. Then gravity affects the ball as well. There is also a friction value that is applied universally when moving horizontally across the edge. <br><br>The user can change the direction of gravity. This is done with the arrow buttons around the canvas. The movement is consistent across all directions. The user can also launch the ball, using the changeable velocity X and Y values in the tab below the canvas.",
-    img1: "/assets/gifs/ball.gif",
+    img1: `${screenshotsLink}ball.png`,
     description2: "",
     img2: "",
     link: "https://atpugh20.github.io/coding-challenges/views/ball-bounce.html",
+  },
+  {
+    title: "DNA Strand",
+    icon: `${iconsLink}dna.png`,
+    summary: "This project simulates a spiraling DNA strand.",
+    description1:
+      "First, objects of the Particle class are initialized into two different arrays, strand1 and strand2. Each particle has an x, y, and z position. X and Y are the horizontal and vertical positions on the canvas as usual. The Z position gives a sense of depth by adjusting the size and the color of the particle. Particles that are further away will be smaller and darker, while particles that are closer will be larger and lighter. <br><br>The draw() function updates the position of every particle in both strands. Then, it compares the Z values of the particles of each strand at the same indexes. If a particle is further away than the other, then it is drawn first. The particle drawn second will draw over the first, and makes it appear as though the closer particle is passing over the further particle.",
+    img1: `${screenshotsLink}dna1.png`,
+    description2:
+      "Technically, each particle does not move horizontally. However, they do move vertically according to a sine wave. To get the wave to move correctly, I had to create a ‘fakePos.x’ attribute that was iterated over instead. Then to get the Y value, I calculated the sine of this fake X. To get the Z value, I calculated the cosine of this fake X. This makes it appear as if the particle is moving in a circle that is perpendicular to the user’s view. <br><br>The user can change various settings with the sliders located underneath the canvas. The color of strand, the size of each particle, the crest height, and the rate of each crest can all be adjusted to the user’s liking.",
+    img2: `${screenshotsLink}dna2.png`,
+    link: "https://atpugh20.github.io/coding-challenges/views/dna.html",
+  },
+  {
+    title: "Particle Gravity",
+    icon: `${iconsLink}pgrav.png`,
+    summary:
+      "This project simulates particles being pulled to a singluar point.",
+    description1: "(Description coming soon)",
+    img1: `${screenshotsLink}pgrav1.png`,
+    description2: "",
+    img2: `${screenshotsLink}pgrav2.png`,
+    link: "https://atpugh20.github.io/coding-challenges/views/particle-gravity.html",
+  },
+  {
+    title: "Particle Orbit",
+    icon: `${iconsLink}porbit.png`,
+    summary:
+      "This project simulates particles orbiting a gravitational center.",
+    description1: "(Description coming soon)",
+    img1: `${screenshotsLink}porbit1.png`,
+    description2: "",
+    img2: `${screenshotsLink}porbit2.png`,
+    link: "https://atpugh20.github.io/coding-challenges/views/particle-orbit.html",
   },
 ];
