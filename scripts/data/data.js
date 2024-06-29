@@ -199,6 +199,6 @@ const projectData = [
     img1: "/assets/gifs/ball.gif",
     description2: "",
     img2: "",
-    link: "https://atpugh20.github.io/coding-challenges/views/ball-bounce/ball-bounce.html",
+    link: "https://atpugh20.github.io/coding-challenges/views/ball-bounce.html",
   },
 ];
