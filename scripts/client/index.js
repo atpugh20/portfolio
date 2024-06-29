@@ -15,9 +15,9 @@ const modalTitle = document.getElementById("modal-title");
 const modalLink = document.getElementById("button-link");
 const modalSummary = document.getElementById("modal-summary");
 const text1 = document.getElementById("modal-text1");
-const gif1 = document.getElementById("modal-img1");
+const img1 = document.getElementById("modal-img1");
 const text2 = document.getElementById("modal-text2");
-const gif2 = document.getElementById("modal-img2");
+const img2 = document.getElementById("modal-img2");
 
 // MAIN //
 
@@ -120,7 +120,7 @@ function fillProjectModal(e, data) {
   // ensures that the second section is shown
   modalLink.style.display = "inline";
   text2.style.display = "inline";
-  gif2.style.display = "inline";
+  img2.style.display = "inline";
   // if only redirect, then open new tab and close the modal
   if (data[index].redirect) {
     window.open(data[index].link);
@@ -131,8 +131,8 @@ function fillProjectModal(e, data) {
   modalTitle.innerHTML = data[index].title;
   modalSummary.innerHTML = data[index].summary;
   text1.innerHTML = data[index].description1;
-  gif1.src = data[index].gif1;
-  // if project does not have link, description2, or gif2, their elements will be hidden
+  img1.src = data[index].img1;
+  // if project does not have link, description2, or img2, their elements will be hidden
   if (data[index].link) {
     modalLink.href = data[index].link;
   } else {
@@ -143,10 +143,10 @@ function fillProjectModal(e, data) {
   } else {
     text2.style.display = "none";
   }
-  if (data[index].gif2) {
-    gif2.src = data[index].gif2;
+  if (data[index].img2) {
+    img2.src = data[index].img2;
   } else {
-    gif2.style.display = "none";
+    img2.style.display = "none";
   }
 }
 
