@@ -218,9 +218,11 @@ const projectData = [
     icon: `${iconsLink}pgrav.png`,
     summary:
       "This project simulates particles being pulled to a singluar point.",
-    description1: "(Description coming soon)",
+    description1:
+      "First, objects of the Particle class are scattered in random places all over the canvas. These are represented by colored rectangles that are 1 pixel in length and width.<br><br>When the user clicks on the canvas, every particle’s updateVelocity() method is called. This method gets the mouse’s X and Y value. With these values, the Arctangent is calculated, using (mouse position - particle position), for both X and Y. This gives the angle from the particle to the cursor. Then we take both the sine and cosine of this angle, to update the particles X and Y velocity. The sine and cosine calculations act as an acceleration for the particles.",
     img1: `${screenshotsLink}pgrav1.png`,
-    description2: "",
+    description2:
+      "While the mouse is held down, the particles will continue to move towards, and even past, the cursor. This produces an atomic effect, as the particles continue to move rapidly in a circle-like shape.<br><br>One the mouse is released, the same calculation is performed again, but in the direction of the particles original position. This causes the particles to all explode out from the mouses position, racing to where they used to be. This also creates a ripple effect. After about 4-5 seconds, the particles automatically set to a velocity of 0. This prevents them from rapidly shaking indefinitely.",
     img2: `${screenshotsLink}pgrav2.png`,
     link: "https://atpugh20.github.io/coding-challenges/views/particle-gravity.html",
   },
@@ -229,9 +231,11 @@ const projectData = [
     icon: `${iconsLink}porbit.png`,
     summary:
       "This project simulates particles orbiting a gravitational center.",
-    description1: "(Description coming soon)",
+    description1:
+      "This builds off the Particle Gravity challenge, but instead of the user clicking, a planet is randomly spawned in on the screen, pulling the particles towards it. This planet moves around the screen in a random direction. <br><br>Rather than having the particles shoot straight towards the planet, there is an orbit interval that is added to the angle. The angle is still calculated using Arctangent, but a random number between 0.4 and 0.8 is added to it. This prevents the particle from targeting the planet itself.",
     img1: `${screenshotsLink}porbit1.png`,
-    description2: "",
+    description2:
+      "The particles then continuously spin around the existing planet. Once the planet is destroyed, the particles do not return to their original position, like in particle gravity, but they shoot off with the same velocity that they had as the planet is destroyed. They continue to bounce on the edges of the canvas chaotically. <br><br>Then, after 500 frames, a new planet spawns in, and the particles rush to orbit it. It will repeat this process indefinitely.",
     img2: `${screenshotsLink}porbit2.png`,
     link: "https://atpugh20.github.io/coding-challenges/views/particle-orbit.html",
   },
