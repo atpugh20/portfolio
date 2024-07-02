@@ -29,6 +29,18 @@ const projectData = [
     link: "https://atpugh20.github.io/pathfinding-visualizer/",
   },
   {
+    title: "Pokédex",
+    icon: `${iconsLink}pokedex.png`,
+    summary: "This website lists and describes all known Pokémon.",
+    description1:
+      "The Pokédex uses data gathered from PokéAPI. It uses React’s useState function and a custom sortData function to dynamically update which cards are displayed on the screen. <br><br>The current version of this website is a fully rebuilt version. Originally, I fetched data for all 1025 Pokémon and saved the data to the browser’s local storage. Unfortunately, I ran into issues with initial loading times, especially on mobile devices. <br><br>The reason the API fetch was so intensive was because the API does not allow us to pull all the details we need in one big call. We must make individual calls per Pokémon, and with there being 1025 different Pokémon, that time starts to add up.",
+    img1: `${screenshotsLink}pokedexHome.png`,
+    description2:
+      "I decided to rebuild the website from the ground up. Most of the styling is the same, but the code is written much better. To fix the initial loading times, I decided to hardcode only the required data for all 1025 Pokémon that are currently known. This enables the data to load almost instantly. <br><br>There is still an API call that is made to check if there are more Pokémon than 1025. If there ever is more, it will combine the two data sets together to be completely accurate.",
+    img2: `${screenshotsLink}pokedex2.png`,
+    link: "https://atpugh20.github.io/pokedex/",
+  },
+  {
     title: "Ocarina Simulator",
     icon: `${iconsLink}ocarina.png`,
     summary:
@@ -58,18 +70,7 @@ const projectData = [
     img2: "",
     link: "https://atpugh20.github.io/geenet-games/public/yahtzee",
   },
-  {
-    title: "Pokédex",
-    icon: `${iconsLink}pokedex.png`,
-    summary: "This website lists and describes all known Pokémon.",
-    description1:
-      "The Pokédex uses a fetch request to pull data from PokéAPI. The data is then saved to local storage as an array of objects to speed up future loading times. <br><br>I chose to continue using the API on the initial load instead of the already gathered data. This is so that when there are more Pokémon inevitably added to the API, the program will be able to update itself, rather than me having to go in and update the array every time that a new Pokémon game comes out.",
-    img1: `${screenshotsLink}pokedexHome.png`,
-    description2:
-      "The Pokédex uses React’s useState function and a custom sortData function to dynamically update which cards are displayed on the screen. <br><br>The biggest issue facing this project is the extensive initial loading time, especially on mobile devices. My current ideas for fixing this issue are as follows: Hard coding the fetched data and checking for additional Pokémon with an API call. Having an initial API call that fetches the metadata, then making additional calls when the data is needed. Checking the API documentation to see if it is possible to combine API calls that are related by the Pokémon itself.",
-    img2: `${screenshotsLink}pokedex2.png`,
-    link: "https://atpugh20.github.io/pokedex/",
-  },
+
   {
     title: "ButterCup Go! Player",
     summary: 'This program automates a web-browser game called "ButterCup GO!"',
