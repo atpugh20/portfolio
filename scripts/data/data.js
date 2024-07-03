@@ -70,7 +70,6 @@ const projectData = [
     img2: "",
     link: "https://atpugh20.github.io/geenet-games/public/yahtzee",
   },
-
   {
     title: "ButterCup Go! Player",
     summary: 'This program automates a web-browser game called "ButterCup GO!"',
@@ -81,6 +80,17 @@ const projectData = [
       "When the bot loses, it submits the score and replays the game. Performance generally differs depending on which web browser is used by the code. I currently have Firefox as the default browser.<br><br>Currently, Buttercup Go! itself has been disabled, and is unavailable to be played. However, the code for this bot can still be seen in its GitHub repository, which can be found by clicking the link above.",
     img2: `${screenshotsLink}buttercup2.png`,
     link: "https://github.com/atpugh20/buttercupgo-player/blob/main/main.py",
+  },
+  {
+    title: "Cube Adventure",
+    icon: `${iconsLink}cube-adventure.png`,
+    summary: "Top down cube game!",
+    description1:
+      "I am currenlty working on this top-down adventure game! Click above to see the current progress on it! A more accurate description is coming soon.",
+    img1: `${iconsLink}cube-adventure.png`,
+    description2: "",
+    img2: ``,
+    link: "https://atpugh20.github.io/cube-adventure/",
   },
   {
     title: "Space Canvas",
