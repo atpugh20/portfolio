@@ -82,17 +82,6 @@ const projectData = [
     link: "https://github.com/atpugh20/buttercupgo-player/blob/main/main.py",
   },
   {
-    title: "Cube Adventure",
-    icon: `${iconsLink}cube-adventure.png`,
-    summary: "Top down cube game!",
-    description1:
-      "I am currenlty working on this top-down adventure game! Click above to see the current progress on it! A more accurate description is coming soon.",
-    img1: `${iconsLink}cube-adventure.png`,
-    description2: "",
-    img2: ``,
-    link: "https://atpugh20.github.io/cube-adventure/",
-  },
-  {
     title: "Space Canvas",
     icon: `${iconsLink}space.png`,
     summary:
@@ -249,5 +238,16 @@ const projectData = [
       "The particles then continuously spin around the existing planet. Once the planet is destroyed, the particles do not return to their original position, like in particle gravity, but they shoot off with the same velocity that they had as the planet is destroyed. They continue to bounce on the edges of the canvas chaotically. <br><br>Then, after 500 frames, a new planet spawns in, and the particles rush to orbit it. It will repeat this process indefinitely.",
     img2: `${screenshotsLink}porbit2.png`,
     link: "https://atpugh20.github.io/coding-challenges/views/particle-orbit.html",
+  },
+  {
+    title: "Cube Adventure",
+    icon: `${iconsLink}cube-adventure.png`,
+    summary: "Top down cube game!",
+    description1:
+      "I am currenlty working on this top-down adventure game! Click above to see the current progress on it! A more accurate description is coming soon.",
+    img1: `${iconsLink}cube-adventure.png`,
+    description2: "",
+    img2: ``,
+    link: "https://atpugh20.github.io/cube-adventure/",
   },
 ];
