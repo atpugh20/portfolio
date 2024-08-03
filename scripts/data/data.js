@@ -16,6 +16,19 @@ const projectData = [
     link: "https://geenetclips.com/",
   },
   {
+    title: "Elemental Darkness",
+    icon: `${iconsLink}ElementalDarkness.png`,
+    summary:
+      "Built in Unity, this game is our submission for the Pirate Software - Game Jam 15 hosted on Itch.io!",
+    description1:
+      "I was the Lead Developer in a five person team that worked on this game! We had two developers, two artists, and one hybrid developer and artist.<br><br>The teams were given a broad topic on July 17th and were tasked to create a game that follows the topic by July 31st. The topic for this year was “Shadows and Alchemy.”<br><br>Elemental Darkness is a 2D precision platformer where you play as Greg, an aspiring alchemist who steals a powerful staff and angers an ancient shadow. Use the power of the staff to escape the shadow and make it out of the temple! We used this game jam as an opportunity to make our first game! All assets and systems were made during the jam.",
+    img1: `${screenshotsLink}SS_ElementalDarkness3.png`,
+    description2:
+      "Initially, using Unity was a bit of a challenge, as I needed to learn the syntax for C#. But Unity’s documentation for the components and the scripting API is incredibly well made. It was very easy to get ahold of components that were in the Game Objects and manipulate them. <br><br>The biggest challenge for me was programming the unique abilities and how the player interacts with them. For the Flame Dash, I wanted the player to move in a perfectly straight line in the direction of the initial movement. To do this, I needed to deactivate gravity, set the player’s velocity to zero for one frame, then apply the dash force to the player for the time set (0.27 seconds). At the end of this time, gravity was switched back on, causing the player to fall back into standard physics.",
+    img2: `${screenshotsLink}SS_ElementalDarkness1.png`,
+    link: "https://alfredo7573.itch.io/elemental-darkness",
+  },
+  {
     title: "Pathfinding Visualizer",
     icon: `${iconsLink}pathfinder.png`,
     summary:
