@@ -6,9 +6,10 @@ const songs = [
   "/assets/audio/midnight_dreams.mp3",
   "/assets/audio/echos_of_underground.mp3",
   "/assets/audio/stars_in_pocket.mp3",
+  "/assets/audio/echos_of_the_overworld.mp3",
+  "/assets/audio/quiet_horizons.mp3",
   "/assets/audio/twilight.mp3",
   "/assets/audio/stars_in_head.mp3",
-  "/assets/audio/underground.mp3",
 ];
 var songNum = 0;
 
