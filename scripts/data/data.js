@@ -253,14 +253,14 @@ const projectData = [
     link: "https://atpugh20.github.io/coding-challenges/views/particle-orbit.html",
   },
   {
-    title: "Cube Adventure",
-    icon: `${iconsLink}cube-adventure.png`,
-    summary: "Top down cube game!",
+    title: "Elastic Collision",
+    icon: `${iconsLink}elastic-collision.png`,
+    summary: "",
     description1:
-      "I am currenlty working on this top-down adventure game! Click above to see the current progress on it! A more accurate description is coming soon.",
-    img1: `${iconsLink}cube-adventure.png`,
+      "",
+    img1: `${iconsLink}elastic-collision.png`,
     description2: "",
     img2: ``,
-    link: "https://atpugh20.github.io/cube-adventure/",
+    link: "https://atpugh20.github.io/coding-challenges/views/elastic-collisions.html",
   },
 ];
