@@ -1,14 +1,20 @@
-// GLOBALS //
+/** 
+* This code handles all of the UI functionality of the wesbite, such as
+* changing the page, loading data, and managing the project modals. 
+*/
+
+
+/* GLOBALS */
 
 const body = document.querySelector("body");
 const navLinks = document.getElementById("nav-links");
 const navButtons = document.getElementsByClassName("button");
-// pages
+// Pages
 const projectsPage = document.getElementById("projects-page");
 const aboutPage = document.getElementById("about-page");
 const resumePage = document.getElementById("resume-page");
 const pages = [projectsPage, aboutPage, resumePage];
-// modal
+// Modal
 const projectModal = document.getElementById("project-modal");
 const closeButton = document.getElementById("close-button");
 const modalTitle = document.getElementById("modal-title");
@@ -19,9 +25,11 @@ const img1 = document.getElementById("modal-img1");
 const text2 = document.getElementById("modal-text2");
 const img2 = document.getElementById("modal-img2");
 
-// MAIN //
+/* MAIN */
 
-// invokes changePage function when one of the navbar buttons is pushed
+// Event Listeners
+
+// Invokes changePage function when one of the navbar buttons is pushed
 navLinks.addEventListener("click", (e) => {
   changePage(e);
 });
@@ -36,10 +44,12 @@ window.addEventListener("click", (e) => {
 
 loadProjectData();
 
-// FUNCTIONS //
+/* FUNCTIONS */
 
-// Clears pages, then displays the selected page //
 function changePage(e) {
+  /** 
+  * Clears pages, then displays the newly selected page
+  */
   window.scrollTo(0, 0);
   switch (e.target.id) {
     case "home-button":
@@ -67,8 +77,10 @@ function changePage(e) {
   }
 }
 
-// Deselects nav-buttons and hides all pages //
 function clearPage() {
+  /**
+  * Deselects the nav-buttons and hides all the pages
+  */
   for (let button of navButtons) {
     button.classList.remove("selected-button");
   }
@@ -78,8 +90,10 @@ function clearPage() {
   }
 }
 
-// Fills the html project lists with the project data //
 function loadProjectData() {
+  /**
+  * Fills the HTML project lists with the project data
+  */
   document.getElementById("project-list").innerHTML = addProjectButtons(
     projectData,
     "project"
@@ -90,8 +104,10 @@ function loadProjectData() {
   );
 }
 
-// Structures an html project-button from a collection of projects //
 function addProjectButtons(projectArray, type) {
+  /**
+  * Structures an html project-button from a collection of projects
+  */
   var outputHTML = "";
   for (let project of projectArray) {
     const index = projectArray.indexOf(project);
@@ -103,8 +119,10 @@ function addProjectButtons(projectArray, type) {
   return outputHTML;
 }
 
-// Shows modal when clicking on a project button //
 function showProjectModal(e) {
+  /**
+  * Shows the modal when clicking on a project button
+  */
   if (e.target.dataset.type) {
     projectModal.classList.remove("hidden");
     projectModal.classList.add("shown-modal");
@@ -114,25 +132,31 @@ function showProjectModal(e) {
   }
 }
 
-// Fills the modal with data for the selected project-button //
 function fillProjectModal(e, data) {
+  /**
+  * Fills the modal with data for the selected project-button
+  */
   const index = Number(e.target.attributes.value.value);
-  // ensures that the second section is shown
+  
+  // Ensures that the second section is shown
   modalLink.style.display = "inline";
   text2.style.display = "inline";
   img2.style.display = "inline";
-  // if only redirect, then open new tab and close the modal
+  
+  // If only redirect, then open new tab and close the modal
   if (data[index].redirect) {
     window.open(data[index].link);
     closeButton.click();
     return;
   }
-  // fills in the necessary data for the project
+  
+  // Fills in the necessary data for the project
   modalTitle.innerHTML = data[index].title;
   modalSummary.innerHTML = data[index].summary;
   text1.innerHTML = data[index].description1;
   img1.src = data[index].img1;
-  // if project does not have link, description2, or img2, their elements will be hidden
+  
+  // If project does not have link, description2, or img2, their elements will be hidden
   if (data[index].link) {
     modalLink.href = data[index].link;
   } else {
@@ -150,16 +174,19 @@ function fillProjectModal(e, data) {
   }
 }
 
-// Hides the modal if clicking off the modal or pressing the close button
 function hideProjectModal(e) {
+  /**
+  * Hides the modal if clicking off the modal or pressing the close button
+  */
   const parent = e.target.parentNode;
-  // only run if the modal is visible
+  
+  // Only run if the modal is visible
   if (
     !projectModal.classList.contains("hidden") &&
     !e.target.classList.contains("project-button") &&
     !parent.classList.contains("project-button")
   ) {
-    // if clicking off modal, or on the close button, then hide the modal
+    // If clicking off modal, or on the close button, then hide the modal
     if (
       (e.target != projectModal &&
         parent != projectModal &&

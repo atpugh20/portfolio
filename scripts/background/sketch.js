@@ -14,7 +14,7 @@ var asteroids = [];
 var boostParticles = [];
 var otherShips = [];
 var ship = new Ship(cW, cH / 2, 1);
-const fps = 60;
+const fps = 30;
 const starCount = cW;
 
 // MAIN //
