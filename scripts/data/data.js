@@ -108,123 +108,15 @@ const projectData = [
     link: "",
   },
   {
-    title: "2-D Raycaster",
-    icon: `${iconsLink}raycaster2d.png`,
-    summary:
-      "This project uses an HTML canvas to show how light interacts with boundaries in a 2D setting.",
+    title: "Elastic Collision",
+    icon: `${iconsLink}elastic-collision.png`,
+    summary: "This project simulates elastic collisions between many particles.",
     description1:
-      "I used three classes: Boundary, Ray, and Particle. A boundary is simply a wall that can stop a ray from extending further. A ray is a line that extends out in a certain direction (vector). A particle is an origin point for multiple rays. <br><br>The particle can be moved around the canvas with the user’s mouse. The rays shine out from this particle in every direction and extend out until they reach a boundary. <br><br>Sliders have been provided that adjust certain parts of the ray caster. Ray Color changes the color gradient of the ray to include the color selected. Ray Count changes the number of rays that are cast from the particle. Ray Length changes the maximum distance that a ray can shine before ending. Ray Strength changes the point of the ray that the color gradient begins to change.",
-    img1: `${screenshotsLink}raycast2d.png`,
+      "An elastic collision occurs when the sum of the kinetic energy of the two particles that collided remains the same. This means, that for the entire canvas, the total kinetic energy must remain constant.<br><br>Calculating whether a collision occurred was easy enough. If the distance between the centers of the particles is less than the sum of both particles’ radiuses, then there is a collision. However, this also means that the particles are now intersecting, so they must be manually shifted back to the point of actual collision. <br><br>After this, the new velocity for both particles must be found. For this, each particle needs to have a mass and an initial velocity. The mass is a pseudo-random integer between 1 and 6. The initial velocity is also a pseudo-random integer but between -1 and 1. The equation for this can be found at https://en.wikipedia.org/wiki/Elastic_collision under the section “Two-dimensional collision with two moving objects.” I used the angle-free equation.",
+    img1: `${iconsLink}elastic-collision.png`,
     description2: "This program was based on a coding challenge video by Daniel Shiffman, A.K.A The Coding Train! His challenges and videos can be found at https://www.youtube.com/@TheCodingTrain.",
-    img2: "",
-    link: "https://atpugh20.github.io/coding-challenges/views/raycaster.html",
-  },
-  {
-    title: "Rendering the Raycaster",
-    icon: `${iconsLink}raycast-render.png`,
-    summary:
-      "This project builds on the 2-D Raycaster by rendering a scene from a select field of view.",
-    description1:
-      "Instead of casting rays in every direction, shown rays are limited to a certain field of view. This field of view is used to build a “scene.” This scene is an array of information that is gathered from each ray. If there is a wall, the scene will have that information. <br><br>Once the scene is gathered, the canvas is split into equal parts along the x-axis, one for each ray. For each ray, if a wall is detected, then it will draw a rectangle. The height of this rectangle is calculated based on the distance from it to the particle. <br><br> The particle can be moved and turned by the user using the W, A, S, and D keys. Just like with the original ray caster, if the page is refreshed, a new set of boundaries are generated, allowing the particle to move about a different area.",
-    img1: `${screenshotsLink}raycast-render.png`,
-    description2: "This program was based on a coding challenge video by Daniel Shiffman, A.K.A The Coding Train! His challenges and videos can be found at https://www.youtube.com/@TheCodingTrain.",
-    img2: "",
-    link: "https://atpugh20.github.io/coding-challenges/views/render-raycaster.html",
-  },
-  {
-    title: "Rendering the Raycaster 2",
-    icon: `${iconsLink}render-objects.png`,
-    summary:
-      "This project builds on “Rendering the Raycaster” by introducing new elements and improving the code.",
-    description1:
-      "The previous project had a lot of jerky movement that seemed inconsistent. The particle movement function was improved to make this movement a lot smoother. <br><br>Multiple new classes are introduced. The Wall class improves boundary creation by adding a second dimension. The walls appear to be rectangular rather than just single lines. The color is now decided by this wall class rather than the ray, making it to where each wall can have its own color. <br><br>The Item class draws an image of an item to the screen that appears as though it is being held by the player. The two items currently available are a sword and a stick. An Enemy class is also programmed but is not used currently. <br><br>The Objects class serves as a data structure for any element that could be rendered on the main canvas. Methods that are specific for this rendering are also declared in this class.",
-    img1: `${screenshotsLink}render-objects.png`,
-    description2: "",
-    img2: "",
-    link: "https://atpugh20.github.io/coding-challenges/views/render-objects/render-objects.html",
-  },
-  {
-    title: "Sand Simulation",
-    icon: `${iconsLink}sand.png`,
-    summary:
-      "This project simulates falling sand and how it interacts with other particles.",
-    description1:
-      "A simple crosshair replaces the user’s cursor when the mouse is on the canvas. This crosshair is the same color as the selected sand color. This color is slightly randomized to create a grainy effect. <br><br>When the user clicks, sand is created at that location, and starts to drop to the bottom of the screen. If it reaches the bottom of the screen, it stops moving.  <br><br>If it reaches another sand particle that is stopped, then it checks below-left and below-right for other sand particles. If there is one on one of the sides but not the other, then the current particle moves diagonally to the side without sand. If there is sand on both sides, then the particle stops. If there is no sand on either side, then a random direction is selected.",
-    img1: `${screenshotsLink}sand.png`,
-    description2: "This program was based on a coding challenge video by Daniel Shiffman, A.K.A The Coding Train! His challenges and videos can be found at https://www.youtube.com/@TheCodingTrain.",
-    img2: "",
-    link: "https://atpugh20.github.io/coding-challenges/views/sand.html",
-  },
-  {
-    title: "Textures - Perlin Noise",
-    icon: `${iconsLink}texture.png`,
-    summary: 'This project uses "noise" to generate a random texture.',
-    description1:
-      "Using “Perlin Noise”, a number between 0-100 is generated for each square of the canvas. This number is used as the saturation of the square. The same generic color is used for each, but the change in saturation gives each square a different level of darkness or lightness. <br><br>The noise makes it to where each square’s saturation is slightly affected by the ones around it. This is what makes the randomization seem orderly. <br><br>For the noise algorithm, I use a library created by Joe Iddon. Their algorithm generates a number between -1 and 1, but I restructured it in my code to produce a number between 0 and 1. <br><br>The library can be found at: https://github.com/joeiddon/perlin",
-    img1: `${screenshotsLink}texture.png`,
-    description2: "",
-    img2: "",
-    link: "https://atpugh20.github.io/coding-challenges/views/perlin-texture.html",
-  },
-  {
-    title: "2-D Terrain - Perlin Noise",
-    icon: `${iconsLink}2d-terrain.png`,
-    summary:
-      "This project uses “noise” to randomly generate two-dimensional terrain.",
-    description1:
-      "Using “Perlin Noise”, a wavy line is drawn across the canvas. The color of the line is altered depending on its y-coordinate. So, a point of the line that is higher will be brighter than a point of the line that is lower. This creates the depth visualization of the terrain. <br><br>Each frame, the wavy line changes on the y-axis slightly using noise. Also with every frame, a screenshot of the canvas is taken, and is placed below the wavy line. This creates terrain. The terrain translates across the screen vertically until it disappears at the bottom of the canvas. To prevent a visual bug, the canvas above the wavy line is filled in black. This is for when the wavy line drops below the terrain already drawn to the screen. <br><br>For the noise algorithm, I use a library created by Joe Iddon. Their algorithm generates a number between -1 and 1, but I restructured it in my code to produce a number between 0 and 1. <br><br>The library can be found at: https://github.com/joeiddon/perlin.",
-    img1: `${screenshotsLink}2dterrain.png`,
-    description2: "",
-    img2: "",
-    link: "https://atpugh20.github.io/coding-challenges/views/2d-perlin-terrain.html",
-  },
-  {
-    title: "Flow Field - Perlin Noise",
-    icon: `${iconsLink}flow.png`,
-    summary:
-      "This project uses “noise” to move many particles across a canvas into a flow.",
-    description1:
-      "First, random vectors are created in a grid. The direction of these vectors is decided by “Perlin Noise.”  This ensures that the direction from vector to vector does not change drastically. These vectors have x and y coordinates that represent positions on the canvas. <br><br>Then, many particles are randomly generated on the canvas. Each particle finds the vector that is closest to it and begins moving in that direction. The particles trace a line behind them to show the path that they took. Over time, the particles end up all on the same line that flows across the canvas. <br><br>The user can change many aspects of the flow field, such as the number of particles and the scale of the vectors themselves. <br><br>For the noise algorithm, I use a library created by Joe Iddon. Their algorithm generates a number between -1 and 1. <br><br>The library can be found at: https://github.com/joeiddon/perlin.",
-    img1: `${screenshotsLink}flow.png`,
-    description2: "This program was based on a coding challenge video by Daniel Shiffman, A.K.A The Coding Train! His challenges and videos can be found at https://www.youtube.com/@TheCodingTrain.",
-    img2: "",
-    link: "https://atpugh20.github.io/coding-challenges/views/flow-field.html",
-  },
-  {
-    title: "Flow Field 2 - Perlin Noise",
-    icon: `${iconsLink}flow2.png`,
-    summary:
-      "This project moves the particles differently than the original flow field.",
-    description1:
-      "Instead of using vectors to determine the direction the particles move in, this project applies the noise to the particles directly. The noise method takes in the particle’s scaled x and y coordinates as parameters. This makes particles that are close together move similarly.  The returned noise is the angle that the particle will move at. I then took the sine and cosine of this angle to give the particle velocity. By itself, the angle creates chaotic movement in some areas of the canvas. I was able to eliminate this problem by dividing the velocity by 0.2. <br><br>Like before, the user can change many aspects of the flow field, such as the number of particles and the scale of the field. <br><br>For the noise algorithm, I use a library created by Joe Iddon. Their algorithm generates a number between -1 and 1. <br><br>The library can be found at: https://github.com/joeiddon/perlin.",
-    img1: `${screenshotsLink}flow2.png`,
-    description2: "",
-    img2: "",
-    link: "https://atpugh20.github.io/coding-challenges/views/flow-field-2.html",
-  },
-  // {
-  //   title: "2-D Ball Simulation",
-  //   icon: `${iconsLink}ball.png`,
-  //   summary:
-  //     "This project simulates how certain balls move and bounce with gravity.",
-  //   description1:
-  //     "The Ball class is used to create each ball. The constructor takes parameters that are attributes of the specific ball. These attributes are stored in JavaScript objects. The parameters are the radius, color, and stopping ratio. <br><br>Each Ball object has a position, velocity, and acceleration. The acceleration is gravity, which I represent with the formula: 9.8 * Scale / FPS. This scales gravity to the size of the canvas and the value of the FPS. The acceleration is applied to the velocity, which is then applied to the ball’s position. <br><br>The stopping ratio represents the bounciness of the ball. When the ball eventually hits the edge of the canvas, it bounces in the opposite direction. The stopping ratio is multiplied by this new velocity, creating the new reduced velocity. Then gravity affects the ball as well. There is also a friction value that is applied universally when moving horizontally across the edge. <br><br>The user can change the direction of gravity. This is done with the arrow buttons around the canvas. The movement is consistent across all directions. The user can also launch the ball, using the changeable velocity X and Y values in the tab below the canvas.",
-  //   img1: `${screenshotsLink}ball.png`,
-  //   description2: "",
-  //   img2: "",
-  //   link: "https://atpugh20.github.io/coding-challenges/views/ball-bounce.html",
-  // },
-  {
-    title: "DNA Strand",
-    icon: `${iconsLink}dna.png`,
-    summary: "This project simulates a spiraling DNA strand.",
-    description1:
-      "First, objects of the Particle class are initialized into two different arrays, strand1 and strand2. Each particle has an x, y, and z position. X and Y are the horizontal and vertical positions on the canvas as usual. The Z position gives a sense of depth by adjusting the size and the color of the particle. Particles that are further away will be smaller and darker, while particles that are closer will be larger and lighter. <br><br>The draw() function updates the position of every particle in both strands. Then, it compares the Z values of the particles of each strand at the same index. If a particle is further away than the other, then it is drawn first. The particle drawn second will draw over the first, and makes it appear as though the closer particle is passing over the further particle.",
-    img1: `${screenshotsLink}dna1.png`,
-    description2:
-      "Technically, each particle does not move horizontally. However, they do move vertically according to a sine wave. To get the wave to move correctly, I had to create a ‘fakePos.x’ attribute that was iterated over instead. Then to get the Y value, I calculated the sine of the fake X. To get the Z value, I calculated the cosine of the fake X. This makes it appear as if the particle is moving in a circle that is perpendicular to the user’s view. <br><br>The user can change various settings with the sliders located underneath the canvas. The color of strand, the size of each particle, the crest height, and the rate of each crest can all be adjusted to the user’s liking.",
-    img2: `${screenshotsLink}dna2.png`,
-    link: "https://atpugh20.github.io/coding-challenges/views/dna.html",
+    img2: ``,
+    link: "https://atpugh20.github.io/coding-challenges/views/elastic-collisions.html",
   },
   {
     title: "Particle Gravity",
@@ -253,14 +145,122 @@ const projectData = [
     link: "https://atpugh20.github.io/coding-challenges/views/particle-orbit.html",
   },
   {
-    title: "Elastic Collision",
-    icon: `${iconsLink}elastic-collision.png`,
-    summary: "This project simulates elastic collisions between many particles.",
+    title: "Flow Field 2 - Perlin Noise",
+    icon: `${iconsLink}flow2.png`,
+    summary:
+      "This project moves the particles differently than the original flow field.",
     description1:
-      "An elastic collision occurs when the sum of the kinetic energy of the two particles that collided remains the same. This means, that for the entire canvas, the total kinetic energy must remain constant.<br><br>Calculating whether a collision occurred was easy enough. If the distance between the centers of the particles is less than the sum of both particles’ radiuses, then there is a collision. However, this also means that the particles are now intersecting, so they must be manually shifted back to the point of actual collision. <br><br>After this, the new velocity for both particles must be found. For this, each particle needs to have a mass and an initial velocity. The mass is a pseudo-random integer between 1 and 6. The initial velocity is also a pseudo-random integer but between -1 and 1. The equation for this can be found at https://en.wikipedia.org/wiki/Elastic_collision under the section “Two-dimensional collision with two moving objects.” I used the angle-free equation.",
-    img1: `${iconsLink}elastic-collision.png`,
-    description2: "This program was based on a coding challenge video by Daniel Shiffman, A.K.A The Coding Train! His challenges and videos can be found at https://www.youtube.com/@TheCodingTrain.",
-    img2: ``,
-    link: "https://atpugh20.github.io/coding-challenges/views/elastic-collisions.html",
+      "Instead of using vectors to determine the direction the particles move in, this project applies the noise to the particles directly. The noise method takes in the particle’s scaled x and y coordinates as parameters. This makes particles that are close together move similarly.  The returned noise is the angle that the particle will move at. I then took the sine and cosine of this angle to give the particle velocity. By itself, the angle creates chaotic movement in some areas of the canvas. I was able to eliminate this problem by dividing the velocity by 0.2. <br><br>Like before, the user can change many aspects of the flow field, such as the number of particles and the scale of the field. <br><br>For the noise algorithm, I use a library created by Joe Iddon. Their algorithm generates a number between -1 and 1. <br><br>The library can be found at: https://github.com/joeiddon/perlin.",
+    img1: `${screenshotsLink}flow2.png`,
+    description2: "",
+    img2: "",
+    link: "https://atpugh20.github.io/coding-challenges/views/flow-field-2.html",
   },
+  {
+    title: "2-D Terrain - Perlin Noise",
+    icon: `${iconsLink}2d-terrain.png`,
+    summary:
+      "This project uses “noise” to randomly generate two-dimensional terrain.",
+    description1:
+      "Using “Perlin Noise”, a wavy line is drawn across the canvas. The color of the line is altered depending on its y-coordinate. So, a point of the line that is higher will be brighter than a point of the line that is lower. This creates the depth visualization of the terrain. <br><br>Each frame, the wavy line changes on the y-axis slightly using noise. Also with every frame, a screenshot of the canvas is taken, and is placed below the wavy line. This creates terrain. The terrain translates across the screen vertically until it disappears at the bottom of the canvas. To prevent a visual bug, the canvas above the wavy line is filled in black. This is for when the wavy line drops below the terrain already drawn to the screen. <br><br>For the noise algorithm, I use a library created by Joe Iddon. Their algorithm generates a number between -1 and 1, but I restructured it in my code to produce a number between 0 and 1. <br><br>The library can be found at: https://github.com/joeiddon/perlin.",
+    img1: `${screenshotsLink}2dterrain.png`,
+    description2: "",
+    img2: "",
+    link: "https://atpugh20.github.io/coding-challenges/views/2d-perlin-terrain.html",
+  },
+  {
+    title: "Flow Field - Perlin Noise",
+    icon: `${iconsLink}flow.png`,
+    summary:
+      "This project uses “noise” to move many particles across a canvas into a flow.",
+    description1:
+      "First, random vectors are created in a grid. The direction of these vectors is decided by “Perlin Noise.”  This ensures that the direction from vector to vector does not change drastically. These vectors have x and y coordinates that represent positions on the canvas. <br><br>Then, many particles are randomly generated on the canvas. Each particle finds the vector that is closest to it and begins moving in that direction. The particles trace a line behind them to show the path that they took. Over time, the particles end up all on the same line that flows across the canvas. <br><br>The user can change many aspects of the flow field, such as the number of particles and the scale of the vectors themselves. <br><br>For the noise algorithm, I use a library created by Joe Iddon. Their algorithm generates a number between -1 and 1. <br><br>The library can be found at: https://github.com/joeiddon/perlin.",
+    img1: `${screenshotsLink}flow.png`,
+    description2: "This program was based on a coding challenge video by Daniel Shiffman, A.K.A The Coding Train! His challenges and videos can be found at https://www.youtube.com/@TheCodingTrain.",
+    img2: "",
+    link: "https://atpugh20.github.io/coding-challenges/views/flow-field.html",
+  }, 
+  {
+    title: "DNA Strand",
+    icon: `${iconsLink}dna.png`,
+    summary: "This project simulates a spiraling DNA strand.",
+    description1:
+      "First, objects of the Particle class are initialized into two different arrays, strand1 and strand2. Each particle has an x, y, and z position. X and Y are the horizontal and vertical positions on the canvas as usual. The Z position gives a sense of depth by adjusting the size and the color of the particle. Particles that are further away will be smaller and darker, while particles that are closer will be larger and lighter. <br><br>The draw() function updates the position of every particle in both strands. Then, it compares the Z values of the particles of each strand at the same index. If a particle is further away than the other, then it is drawn first. The particle drawn second will draw over the first, and makes it appear as though the closer particle is passing over the further particle.",
+    img1: `${screenshotsLink}dna1.png`,
+    description2:
+      "Technically, each particle does not move horizontally. However, they do move vertically according to a sine wave. To get the wave to move correctly, I had to create a ‘fakePos.x’ attribute that was iterated over instead. Then to get the Y value, I calculated the sine of the fake X. To get the Z value, I calculated the cosine of the fake X. This makes it appear as if the particle is moving in a circle that is perpendicular to the user’s view. <br><br>The user can change various settings with the sliders located underneath the canvas. The color of strand, the size of each particle, the crest height, and the rate of each crest can all be adjusted to the user’s liking.",
+    img2: `${screenshotsLink}dna2.png`,
+    link: "https://atpugh20.github.io/coding-challenges/views/dna.html",
+  },
+  {
+    title: "Sand Simulation",
+    icon: `${iconsLink}sand.png`,
+    summary:
+      "This project simulates falling sand and how it interacts with other particles.",
+    description1:
+      "A simple crosshair replaces the user’s cursor when the mouse is on the canvas. This crosshair is the same color as the selected sand color. This color is slightly randomized to create a grainy effect. <br><br>When the user clicks, sand is created at that location, and starts to drop to the bottom of the screen. If it reaches the bottom of the screen, it stops moving.  <br><br>If it reaches another sand particle that is stopped, then it checks below-left and below-right for other sand particles. If there is one on one of the sides but not the other, then the current particle moves diagonally to the side without sand. If there is sand on both sides, then the particle stops. If there is no sand on either side, then a random direction is selected.",
+    img1: `${screenshotsLink}sand.png`,
+    description2: "This program was based on a coding challenge video by Daniel Shiffman, A.K.A The Coding Train! His challenges and videos can be found at https://www.youtube.com/@TheCodingTrain.",
+    img2: "",
+    link: "https://atpugh20.github.io/coding-challenges/views/sand.html",
+  },  
+  {
+    title: "Rendering the Raycaster 2",
+    icon: `${iconsLink}render-objects.png`,
+    summary:
+      "This project builds on “Rendering the Raycaster” by introducing new elements and improving the code.",
+    description1:
+      "The previous project had a lot of jerky movement that seemed inconsistent. The particle movement function was improved to make this movement a lot smoother. <br><br>Multiple new classes are introduced. The Wall class improves boundary creation by adding a second dimension. The walls appear to be rectangular rather than just single lines. The color is now decided by this wall class rather than the ray, making it to where each wall can have its own color. <br><br>The Item class draws an image of an item to the screen that appears as though it is being held by the player. The two items currently available are a sword and a stick. An Enemy class is also programmed but is not used currently. <br><br>The Objects class serves as a data structure for any element that could be rendered on the main canvas. Methods that are specific for this rendering are also declared in this class.",
+    img1: `${screenshotsLink}render-objects.png`,
+    description2: "",
+    img2: "",
+    link: "https://atpugh20.github.io/coding-challenges/views/render-objects/render-objects.html",
+  },  
+  {
+    title: "Rendering the Raycaster",
+    icon: `${iconsLink}raycast-render.png`,
+    summary:
+      "This project builds on the 2-D Raycaster by rendering a scene from a select field of view.",
+    description1:
+      "Instead of casting rays in every direction, shown rays are limited to a certain field of view. This field of view is used to build a “scene.” This scene is an array of information that is gathered from each ray. If there is a wall, the scene will have that information. <br><br>Once the scene is gathered, the canvas is split into equal parts along the x-axis, one for each ray. For each ray, if a wall is detected, then it will draw a rectangle. The height of this rectangle is calculated based on the distance from it to the particle. <br><br> The particle can be moved and turned by the user using the W, A, S, and D keys. Just like with the original ray caster, if the page is refreshed, a new set of boundaries are generated, allowing the particle to move about a different area.",
+    img1: `${screenshotsLink}raycast-render.png`,
+    description2: "This program was based on a coding challenge video by Daniel Shiffman, A.K.A The Coding Train! His challenges and videos can be found at https://www.youtube.com/@TheCodingTrain.",
+    img2: "",
+    link: "https://atpugh20.github.io/coding-challenges/views/render-raycaster.html",
+  },  
+  {
+    title: "2-D Raycaster",
+    icon: `${iconsLink}raycaster2d.png`,
+    summary:
+      "This project uses an HTML canvas to show how light interacts with boundaries in a 2D setting.",
+    description1:
+      "I used three classes: Boundary, Ray, and Particle. A boundary is simply a wall that can stop a ray from extending further. A ray is a line that extends out in a certain direction (vector). A particle is an origin point for multiple rays. <br><br>The particle can be moved around the canvas with the user’s mouse. The rays shine out from this particle in every direction and extend out until they reach a boundary. <br><br>Sliders have been provided that adjust certain parts of the ray caster. Ray Color changes the color gradient of the ray to include the color selected. Ray Count changes the number of rays that are cast from the particle. Ray Length changes the maximum distance that a ray can shine before ending. Ray Strength changes the point of the ray that the color gradient begins to change.",
+    img1: `${screenshotsLink}raycast2d.png`,
+    description2: "This program was based on a coding challenge video by Daniel Shiffman, A.K.A The Coding Train! His challenges and videos can be found at https://www.youtube.com/@TheCodingTrain.",
+    img2: "",
+    link: "https://atpugh20.github.io/coding-challenges/views/raycaster.html",
+  },
+  {
+    title: "Textures - Perlin Noise",
+    icon: `${iconsLink}texture.png`,
+    summary: 'This project uses "noise" to generate a random texture.',
+    description1:
+      "Using “Perlin Noise”, a number between 0-100 is generated for each square of the canvas. This number is used as the saturation of the square. The same generic color is used for each, but the change in saturation gives each square a different level of darkness or lightness. <br><br>The noise makes it to where each square’s saturation is slightly affected by the ones around it. This is what makes the randomization seem orderly. <br><br>For the noise algorithm, I use a library created by Joe Iddon. Their algorithm generates a number between -1 and 1, but I restructured it in my code to produce a number between 0 and 1. <br><br>The library can be found at: https://github.com/joeiddon/perlin",
+    img1: `${screenshotsLink}texture.png`,
+    description2: "",
+    img2: "",
+    link: "https://atpugh20.github.io/coding-challenges/views/perlin-texture.html",
+  },
+  // {
+  //   title: "2-D Ball Simulation",
+  //   icon: `${iconsLink}ball.png`,
+  //   summary:
+  //     "This project simulates how certain balls move and bounce with gravity.",
+  //   description1:
+  //     "The Ball class is used to create each ball. The constructor takes parameters that are attributes of the specific ball. These attributes are stored in JavaScript objects. The parameters are the radius, color, and stopping ratio. <br><br>Each Ball object has a position, velocity, and acceleration. The acceleration is gravity, which I represent with the formula: 9.8 * Scale / FPS. This scales gravity to the size of the canvas and the value of the FPS. The acceleration is applied to the velocity, which is then applied to the ball’s position. <br><br>The stopping ratio represents the bounciness of the ball. When the ball eventually hits the edge of the canvas, it bounces in the opposite direction. The stopping ratio is multiplied by this new velocity, creating the new reduced velocity. Then gravity affects the ball as well. There is also a friction value that is applied universally when moving horizontally across the edge. <br><br>The user can change the direction of gravity. This is done with the arrow buttons around the canvas. The movement is consistent across all directions. The user can also launch the ball, using the changeable velocity X and Y values in the tab below the canvas.",
+  //   img1: `${screenshotsLink}ball.png`,
+  //   description2: "",
+  //   img2: "",
+  //   link: "https://atpugh20.github.io/coding-challenges/views/ball-bounce.html",
+  // },
 ];
