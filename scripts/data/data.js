@@ -54,6 +54,18 @@ const projectData = [
     link: "https://atpugh20.github.io/pokedex/",
   },
   {
+    title: "Hex Game",
+    icon: `${screenshotsLink}hex_board.png`,
+    summary: 'This project uses Python and Pygame to simulate the board game called "Hex".',
+    description1:
+      "In Hex, you and your opponent take turns placing down colored pieces on an 11x11 board. Each space is shaped like a hexagon. To win the game, you must create a full path between both walls that match the same color as your pieces. In this interpretation, there are red and blue pieces, with the red player going first. There will always be a winner in hex, so there will be no ties.<br><br>The game loop is constantly running, allowing the board to be rendered every frame. The game alternates between the user and the cpu’s turns. After each turn, the program checks to see if the player has created a path. A modified Dijkstra’s algorithm is used to find this path. It checks every piece on one of the player’s walls, then follows any nodes filled with their pieces. If the opposite wall is ever reached, then that player wins. The shortest path does not have to be tracked as it does not matter as long is there at least one path.",
+    img1: `${screenshotsLink}hex_title.png`,
+    description2:
+      "The computer does not simply choose a random move. It uses a Monte Carlo approach to selecting its next move. In this case, a simulation board is created. Then for every potential move that can be made, 1000 simulations are run, where the user’s and CPU’s tiles are placed in random spots, alternating. The number of winning scenarios for each potential move is tracked. Once every potential move runs 1000 simulations, the move with the most wins is selected and filled by the CPU’s color. Because the game is run in Python, it takes around 10-15 seconds for the CPU to decide its move with that many simulations. This is accurate to how long it would take a human player to decide their own move.",
+    img2: `${screenshotsLink}hex_board.png`,
+    link: "https://github.com/atpugh20/hex-pygame",   
+  },
+  {
     title: "Ocarina Simulator",
     icon: `${iconsLink}ocarina.png`,
     summary:
