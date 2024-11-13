@@ -1,6 +1,9 @@
-// HOME PAGE CANVAS //
+/** 
+* HOME PAGE CANVAS
+*/
 
 // CANVAS SETUP //
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 var cW = (canvas.width = window.innerWidth);
@@ -20,18 +23,22 @@ const starCount = cW;
 // MAIN //
 
 window.addEventListener("load", setup);
-// resizing the window will reload the canvas to match new dimensions
-window.addEventListener("resize", () => {
+
+window.addEventListener("resize", () => { 
+  // resizing the window will reload the canvas to match new dimensions
   if (window.innerWidth != cW) {
     resetup();
   }
 });
-// repeats the draw function at the set FPS
-setInterval(draw, 1000 / fps);
+
+setInterval(draw, 1000 / fps);  // repeats the draw function at the set FPS
 
 // FUNCTIONS //
 
 function draw() {
+	/**
+	* Draws every instance to the background canvas
+	*/
   clearCanvas();
   for (let star of stars) {
     star.updatePosition();
@@ -60,22 +67,30 @@ function setup() {
   addOtherShips();
 }
 
-// adds stars at random positions and distances
 function addStars() {
+  /** 
+  * Adds stars at random positions and distances 
+  */
   for (let i = 0; i < starCount; i++) {
     stars.push(new Star(rand(cW), rand(cH), getDistance()));
   }
 }
 
-// 1/100 chance to spawn an asteroid until there are 15 total
-function addAsteroids() {
+function addAsteroids() { 
+  /**
+  * Adds all asteroids to the asteroids array. There is a 1/100 chance 
+  * to spawn an asteroid until there are 15 total.
+  */
   for (let i = 0; i < 10; i++) {
     asteroids.push(new Asteroid(rand(cW), rand(cH), getDistance()));
   }
 }
 
-// add boost until it has reached the end of the screen
 function addBoost() {
+  /**
+  * Adds all boost to the asteroid array. Will add boost until it has 
+  * reached the end of the screen.
+  */
   for (let i = 0; i < cW; i++) {
     boostParticles.push(new Boost(ship.pos.x + 80 + i, ship.pos.y - 1));
   }
@@ -87,17 +102,24 @@ function addOtherShips() {
   }
 }
 
-// shortens the process of getting a random distance
 function getDistance() {
+  /**
+  * Shortens the process of getting a random distance.
+  */
   return rand(9) + 1;
 }
 
-// shortens the process of getting a random number
 function rand(n) {
+  /**
+  * Shortens the process of getting a random number.
+  */
   return Math.floor(Math.random() * n);
 }
 
 function resetup() {
+  /**
+  * Resets the instances on the canvas for screen resizes 
+  */
   stars = [];
   asteroids = [];
   boostParticles = [];
@@ -109,6 +131,9 @@ function resetup() {
 }
 
 function clearCanvas() {
+  /**
+  * Wipes the canvas in between each frame to display updated positions.
+  */
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = cColor;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
