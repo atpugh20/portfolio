@@ -98,8 +98,12 @@ function loadProjectData() {
     projectData,
     "project"
   );
+  document.getElementById("game-list").innerHTML = addProjectButtons(
+    gameData,
+    "game"
+  );
   document.getElementById("challenge-list").innerHTML = addProjectButtons(
-    challengeData,
+    challegeData,
     "challenge"
   );
 }
@@ -128,7 +132,12 @@ function showProjectModal(e) {
     projectModal.classList.add("shown-modal");
     body.height = "100vh";
     body.style.overflowY = "hidden";
-    fillProjectModal(e, projectData);
+    if (e.target.dataset.type === "project")
+      fillProjectModal(e, projectData);
+    else if (e.target.dataset.type === "game")
+      fillProjectModal(e, gameData);
+    else if (e.target.dataset.type === "challenge")
+      fillProjectModal(e, challegeData);
   }
 }
 

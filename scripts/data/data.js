@@ -15,32 +15,7 @@ const projectData = [
     img2: `${screenshotsLink}clipsVideo.png`,
     link: "https://geenetclips.com/",
   },
-  {
-    title: "SkeleCycle",
-    icon: `${iconsLink}skelecycle.png`,
-    summary:
-      "In SkeleCycle, you are able to experience the breathtaking journey of riding a unicycle as a skeleton. Not only will you find balance within the game, but you will also find balance within yourself.",
-    description1:
-      "I developed this game for the Gamedev.js Game Jam 2025. The theme of this game jam was “Balance.” In this game, your objective is to reach the flag at the end of the level. While traversing the level, you must avoid obstacles and keep yourself balanced. If you either hit an obstacle or fall to the ground, you lose and must start the level over. <br><br>The concept of the game is based on <em>The Impossible Game</em> by Crazy Games. The game was developed with the controller player in mind. While you can play the game with the keyboard, it is highly recommended to use a controller, as it gives you finer control of the player.",
-    img1: `${screenshotsLink}skele1.png`,
-    description2:
-      "The player is forced forward and cannot control their forward movement. This allows the player to focus on jumping and balancing. As the player moves forward, they will start to either slip forward or backward, using the rigid body linear velocity value scaled by 0.1f. The biggest challenge for this game was to find a scalar value that was not too difficult for the player. 0.1f gave the best balance to where the player still must learn the movement to succeed but is also not extremely difficult. Once the angle of the player reaches 70 degrees in either direction, then the player dies.<br><br>The player has one jump they are able that is reset every time they touch the ground. I decided to make it to where if the player slides off the edge of an obstacle without jumping, they still maintain their jump if they have not used it.",
-    img2: `${screenshotsLink}skele2.png`,
-    link: "https://alfredo7573.itch.io/skelecycle",
-  },
-  {
-    title: "Elemental Darkness",
-    icon: `${iconsLink}ElementalDarkness.png`,
-    summary:
-      "Built in Unity, this game is our submission for the Pirate Software - Game Jam 15 hosted on Itch.io!",
-    description1:
-      "I was the Lead Developer in a five person team that worked on this game! We had two developers, two artists, and one hybrid developer and artist.<br><br>The teams were given a broad topic on July 17th and were tasked to create a game that follows the topic by July 31st. The topic for this year was “Shadows and Alchemy.”<br><br>Elemental Darkness is a 2D precision platformer where you play as Greg, an aspiring alchemist who steals a powerful staff and angers an ancient shadow. Use the power of the staff to escape the shadow and make it out of the temple! We used this game jam as an opportunity to make our first game! All assets and systems were made during the jam.",
-    img1: `${screenshotsLink}SS_ElementalDarkness3.png`,
-    description2:
-      "Initially, using Unity was a bit of a challenge, as I needed to learn the syntax for C#. But Unity’s documentation for the components and the scripting API is incredibly well made. It was very easy to get ahold of components that were in the Game Objects and manipulate them. <br><br>The biggest challenge for me was programming the unique abilities and how the player interacts with them. For the Flame Dash, I wanted the player to move in a perfectly straight line in the direction of the initial movement. To do this, I needed to deactivate gravity, set the player’s velocity to zero for one frame, then apply the dash force to the player for the time set (0.27 seconds). At the end of this time, gravity was switched back on, causing the player to fall back into standard physics.",
-    img2: `${screenshotsLink}SS_ElementalDarkness1.png`,
-    link: "https://alfredo7573.itch.io/elemental-darkness",
-  },
+  
   {
     title: "Pathfinding Visualizer",
     icon: `${iconsLink}pathfinder.png`,
@@ -66,18 +41,7 @@ const projectData = [
     img2: `${screenshotsLink}pokedex2.png`,
     link: "https://atpugh20.github.io/pokedex/",
   },
-  {
-    title: "Hex Game",
-    icon: `${screenshotsLink}hex_board.png`,
-    summary: 'This project uses Python and Pygame to simulate the board game called "Hex".',
-    description1:
-      "In Hex, you and your opponent take turns placing down colored pieces on an 11x11 board. Each space is shaped like a hexagon. To win the game, you must create a full path between both walls that match the same color as your pieces. In this interpretation, there are red and blue pieces, with the red player going first. There will always be a winner in hex, so there will be no ties.<br><br>The game loop is constantly running, allowing the board to be rendered every frame. The game alternates between the user and the cpu’s turns. After each turn, the program checks to see if the player has created a path. A modified Dijkstra’s algorithm is used to find this path. It checks every piece on one of the player’s walls, then follows any nodes filled with their pieces. If the opposite wall is ever reached, then that player wins. The shortest path does not have to be tracked as it does not matter as long is there at least one path.",
-    img1: `${screenshotsLink}hex_title.png`,
-    description2:
-      "The computer does not simply choose a random move. It uses a Monte Carlo approach to selecting its next move. In this case, a simulation board is created. Then for every potential move that can be made, 1000 simulations are run, where the user’s and CPU’s tiles are placed in random spots, alternating. The number of winning scenarios for each potential move is tracked. Once every potential move runs 1000 simulations, the move with the most wins is selected and filled by the CPU’s color. Because the game is run in Python, it takes around 10-15 seconds for the CPU to decide its move with that many simulations. This is accurate to how long it would take a human player to decide their own move.",
-    img2: `${screenshotsLink}hex_board.png`,
-    link: "https://github.com/atpugh20/hex-pygame",   
-  },
+  
   {
     title: "Ocarina Simulator",
     icon: `${iconsLink}ocarina.png`,
@@ -132,6 +96,63 @@ const projectData = [
     img2: `${screenshotsLink}ship.png`,
     link: "",
   },
+
+  // {
+  //   title: "2-D Ball Simulation",
+  //   icon: `${iconsLink}ball.png`,
+  //   summary:
+  //     "This project simulates how certain balls move and bounce with gravity.",
+  //   description1:
+  //     "The Ball class is used to create each ball. The constructor takes parameters that are attributes of the specific ball. These attributes are stored in JavaScript objects. The parameters are the radius, color, and stopping ratio. <br><br>Each Ball object has a position, velocity, and acceleration. The acceleration is gravity, which I represent with the formula: 9.8 * Scale / FPS. This scales gravity to the size of the canvas and the value of the FPS. The acceleration is applied to the velocity, which is then applied to the ball’s position. <br><br>The stopping ratio represents the bounciness of the ball. When the ball eventually hits the edge of the canvas, it bounces in the opposite direction. The stopping ratio is multiplied by this new velocity, creating the new reduced velocity. Then gravity affects the ball as well. There is also a friction value that is applied universally when moving horizontally across the edge. <br><br>The user can change the direction of gravity. This is done with the arrow buttons around the canvas. The movement is consistent across all directions. The user can also launch the ball, using the changeable velocity X and Y values in the tab below the canvas.",
+  //   img1: `${screenshotsLink}ball.png`,
+  //   description2: "",
+  //   img2: "",
+  //   link: "https://atpugh20.github.io/coding-challenges/views/ball-bounce.html",
+  // },
+];
+
+const gameData = [
+{
+    title: "SkeleCycle",
+    icon: `${iconsLink}skelecycle.png`,
+    summary:
+      "In SkeleCycle, you are able to experience the breathtaking journey of riding a unicycle as a skeleton. Not only will you find balance within the game, but you will also find balance within yourself.",
+    description1:
+      "I developed this game for the Gamedev.js Game Jam 2025. The theme of this game jam was “Balance.” In this game, your objective is to reach the flag at the end of the level. While traversing the level, you must avoid obstacles and keep yourself balanced. If you either hit an obstacle or fall to the ground, you lose and must start the level over. <br><br>The concept of the game is based on <em>The Impossible Game</em> by Crazy Games. The game was developed with the controller player in mind. While you can play the game with the keyboard, it is highly recommended to use a controller, as it gives you finer control of the player.",
+    img1: `${screenshotsLink}skele1.png`,
+    description2:
+      "The player is forced forward and cannot control their forward movement. This allows the player to focus on jumping and balancing. As the player moves forward, they will start to either slip forward or backward, using the rigid body linear velocity value scaled by 0.1f. The biggest challenge for this game was to find a scalar value that was not too difficult for the player. 0.1f gave the best balance to where the player still must learn the movement to succeed but is also not extremely difficult. Once the angle of the player reaches 70 degrees in either direction, then the player dies.<br><br>The player has one jump they are able that is reset every time they touch the ground. I decided to make it to where if the player slides off the edge of an obstacle without jumping, they still maintain their jump if they have not used it.",
+    img2: `${screenshotsLink}skele2.png`,
+    link: "https://alfredo7573.itch.io/skelecycle",
+  },
+  {
+    title: "Elemental Darkness",
+    icon: `${iconsLink}ElementalDarkness.png`,
+    summary:
+      "Built in Unity, this game is our submission for the Pirate Software - Game Jam 15 hosted on Itch.io!",
+    description1:
+      "I was the Lead Developer in a five person team that worked on this game! We had two developers, two artists, and one hybrid developer and artist.<br><br>The teams were given a broad topic on July 17th and were tasked to create a game that follows the topic by July 31st. The topic for this year was “Shadows and Alchemy.”<br><br>Elemental Darkness is a 2D precision platformer where you play as Greg, an aspiring alchemist who steals a powerful staff and angers an ancient shadow. Use the power of the staff to escape the shadow and make it out of the temple! We used this game jam as an opportunity to make our first game! All assets and systems were made during the jam.",
+    img1: `${screenshotsLink}SS_ElementalDarkness3.png`,
+    description2:
+      "Initially, using Unity was a bit of a challenge, as I needed to learn the syntax for C#. But Unity’s documentation for the components and the scripting API is incredibly well made. It was very easy to get ahold of components that were in the Game Objects and manipulate them. <br><br>The biggest challenge for me was programming the unique abilities and how the player interacts with them. For the Flame Dash, I wanted the player to move in a perfectly straight line in the direction of the initial movement. To do this, I needed to deactivate gravity, set the player’s velocity to zero for one frame, then apply the dash force to the player for the time set (0.27 seconds). At the end of this time, gravity was switched back on, causing the player to fall back into standard physics.",
+    img2: `${screenshotsLink}SS_ElementalDarkness1.png`,
+    link: "https://alfredo7573.itch.io/elemental-darkness",
+  },
+{
+    title: "Hex Game",
+    icon: `${screenshotsLink}hex_board.png`,
+    summary: 'This project uses Python and Pygame to simulate the board game called "Hex".',
+    description1:
+      "In Hex, you and your opponent take turns placing down colored pieces on an 11x11 board. Each space is shaped like a hexagon. To win the game, you must create a full path between both walls that match the same color as your pieces. In this interpretation, there are red and blue pieces, with the red player going first. There will always be a winner in hex, so there will be no ties.<br><br>The game loop is constantly running, allowing the board to be rendered every frame. The game alternates between the user and the cpu’s turns. After each turn, the program checks to see if the player has created a path. A modified Dijkstra’s algorithm is used to find this path. It checks every piece on one of the player’s walls, then follows any nodes filled with their pieces. If the opposite wall is ever reached, then that player wins. The shortest path does not have to be tracked as it does not matter as long is there at least one path.",
+    img1: `${screenshotsLink}hex_title.png`,
+    description2:
+      "The computer does not simply choose a random move. It uses a Monte Carlo approach to selecting its next move. In this case, a simulation board is created. Then for every potential move that can be made, 1000 simulations are run, where the user’s and CPU’s tiles are placed in random spots, alternating. The number of winning scenarios for each potential move is tracked. Once every potential move runs 1000 simulations, the move with the most wins is selected and filled by the CPU’s color. Because the game is run in Python, it takes around 10-15 seconds for the CPU to decide its move with that many simulations. This is accurate to how long it would take a human player to decide their own move.",
+    img2: `${screenshotsLink}hex_board.png`,
+    link: "https://github.com/atpugh20/hex-pygame",   
+  },
+];
+
+const challegeData = [
   {
     title: "Elastic Collision",
     icon: `${iconsLink}elastic-collision.png`,
@@ -276,16 +297,4 @@ const projectData = [
     img2: "",
     link: "https://atpugh20.github.io/coding-challenges/views/perlin-texture.html",
   },
-  // {
-  //   title: "2-D Ball Simulation",
-  //   icon: `${iconsLink}ball.png`,
-  //   summary:
-  //     "This project simulates how certain balls move and bounce with gravity.",
-  //   description1:
-  //     "The Ball class is used to create each ball. The constructor takes parameters that are attributes of the specific ball. These attributes are stored in JavaScript objects. The parameters are the radius, color, and stopping ratio. <br><br>Each Ball object has a position, velocity, and acceleration. The acceleration is gravity, which I represent with the formula: 9.8 * Scale / FPS. This scales gravity to the size of the canvas and the value of the FPS. The acceleration is applied to the velocity, which is then applied to the ball’s position. <br><br>The stopping ratio represents the bounciness of the ball. When the ball eventually hits the edge of the canvas, it bounces in the opposite direction. The stopping ratio is multiplied by this new velocity, creating the new reduced velocity. Then gravity affects the ball as well. There is also a friction value that is applied universally when moving horizontally across the edge. <br><br>The user can change the direction of gravity. This is done with the arrow buttons around the canvas. The movement is consistent across all directions. The user can also launch the ball, using the changeable velocity X and Y values in the tab below the canvas.",
-  //   img1: `${screenshotsLink}ball.png`,
-  //   description2: "",
-  //   img2: "",
-  //   link: "https://atpugh20.github.io/coding-challenges/views/ball-bounce.html",
-  // },
 ];
