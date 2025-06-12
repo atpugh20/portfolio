@@ -16,6 +16,19 @@ const projectData = [
     link: "https://geenetclips.com/",
   },
   {
+    title: "SkeleCycle",
+    icon: `${iconsLink}skelecycle.png`,
+    summary:
+      "In SkeleCycle, you are able to experience the breathtaking journey of riding a unicycle as a skeleton. Not only will you find balance within the game, but you will also find balance within yourself.",
+    description1:
+      "I developed this game for the Gamedev.js Game Jam 2025. The theme of this game jam was “Balance.” In this game, your objective is to reach the flag at the end of the level. While traversing the level, you must avoid obstacles and keep yourself balanced. If you either hit an obstacle or fall to the ground, you lose and must start the level over. <br><br>The concept of the game is based on <em>The Impossible Game</em> by Crazy Games. The game was developed with the controller player in mind. While you can play the game with the keyboard, it is highly recommended to use a controller, as it gives you finer control of the player.",
+    img1: `${screenshotsLink}skele1.png`,
+    description2:
+      "The player is forced forward and cannot control their forward movement. This allows the player to focus on jumping and balancing. As the player moves forward, they will start to either slip forward or backward, using the rigid body linear velocity value scaled by 0.1f. The biggest challenge for this game was to find a scalar value that was not too difficult for the player. 0.1f gave the best balance to where the player still must learn the movement to succeed but is also not extremely difficult. Once the angle of the player reaches 70 degrees in either direction, then the player dies.<br><br>The player has one jump they are able that is reset every time they touch the ground. I decided to make it to where if the player slides off the edge of an obstacle without jumping, they still maintain their jump if they have not used it.",
+    img2: `${screenshotsLink}skele2.png`,
+    link: "https://alfredo7573.itch.io/skelecycle",
+  },
+  {
     title: "Elemental Darkness",
     icon: `${iconsLink}ElementalDarkness.png`,
     summary:
